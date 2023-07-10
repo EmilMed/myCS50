@@ -1,3 +1,3 @@
-// Prompt the User for input (height of the ladder)
-// Get a positive integer
-// 
+ Prompt the user for input (height of the ladder)
+ Get a positive integer
+ If an integer is smaller than 1 or greater than 8, return to step 1
