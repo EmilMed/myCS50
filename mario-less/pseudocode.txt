@@ -1,0 +1,2 @@
+// Prompt the User for input (height of the ladder)
+// 
