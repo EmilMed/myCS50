@@ -6,7 +6,7 @@ int main(void)
     int n;
     do
     {
-        n = get_int("Height: "); //
+        n = get_int("Height: "); 
     }
     while (n > 8); && (n < 1);
 
