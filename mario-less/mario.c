@@ -10,4 +10,6 @@ int main(void)
     }
     while (n > 8 || n < 1);
 
+    for 
+
 }
