@@ -18,7 +18,7 @@ int main(void)
         } // HASHES
         for (int o = 1; o < n; o++)
         {
-            printf("#\n");
+            printf("#");
         }
         printf("\n");
         break;
