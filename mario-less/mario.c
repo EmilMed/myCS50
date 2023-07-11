@@ -9,19 +9,19 @@ int main(void)
         n = get_int("Height: ");
     }
     while (n > 8 || n < 1);
-
+// For EACH ROW
     for (int g = 1; g < n + 1; g++)
-    {
+    { // DOTS
         for (int i = n - 1; i > 1; i--)
         {
             printf(".");
-        }
-        for (int o = 0; o < i; o++)
+        } // HASHES
+        for (int o = 1; o < n; o++)
         {
             printf("#\n");
         }
         printf("\n");
-        break
+        break;
     }
 
 }
