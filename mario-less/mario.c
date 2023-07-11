@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main(void)
-{
+{ // Obtain positive integer in range between 1 and 8
     int n;
     do
     {
@@ -16,7 +16,7 @@ int main(void)
         {
             printf(".");
         } // HASHES
-        for (int o = 1; o < n; o++)
+           for (int o = 1; o < n; o++)
         {
             printf("#");
         }
