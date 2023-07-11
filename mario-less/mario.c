@@ -12,7 +12,10 @@ int main(void)
 
     for (int g = 1; g < n + 1; g++)
     {
-        for (int i = n; i < n; i--)
+        for (int i = g; i > 1; i--)
+        {
+            prinf(".")
+        }
     }
 
     printf("#\n" );
