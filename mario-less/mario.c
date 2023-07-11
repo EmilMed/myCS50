@@ -12,9 +12,9 @@ int main(void)
 // For EACH ROW
     for (int g = 0; g < n; g++)
     { // DOTS
-        for (int i = n - 1; i > 1; i--)
+        for (int i = n - 1; i > 0; i--)
         {
-            printf(".");
+            printf(" ");
         } // HASHES
            for (int o = 1; o < n; o++)
         {
