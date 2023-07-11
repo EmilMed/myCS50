@@ -10,7 +10,7 @@ int main(void)
     }
     while (n > 8 || n < 1);
 // For EACH ROW
-    for (int g = 1; g < n + 1; g++)
+    for (int g = 0; g < n; g++)
     { // DOTS
         for (int i = n - 1; i > 1; i--)
         {
