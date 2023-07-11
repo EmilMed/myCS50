@@ -13,7 +13,7 @@ int main(void)
     for (int g = 0; g < n; g++)
      {
         for (int h = 0; h < n; h++)
-          { if (g + h > n - 1)
+          { if (g + h > n - 2)
               printf("#");
            else
               printf(" ");
