@@ -16,12 +16,11 @@ int main(void)
         {
             printf(" ");
         } // HASHES
-           for (int o = 1; o < n; o++)
+           for (int o = 1; o < n + 1; o++)
         {
             printf("#");
         }
         printf("\n");
-        break;
     }
   }
 
