@@ -10,7 +10,7 @@ int main(void)
     }
     while (n > 8 || n < 1);
 
-    for (int g = 0; g < n; g++)
+    for (int g = 0; g < n + 1; g++)
     {
         for (int i; i < n + 1; i--)
     }
