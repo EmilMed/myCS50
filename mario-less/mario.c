@@ -13,11 +13,11 @@ int main(void)
     for (int g = 0; g < n; g++)
      {
         for (int h = 0; h < n; h++)
-           if (g + h > n - 1)
-              printf(" ");
-           else
+          { if (g + h > n - 1)
               printf("#");
-     }
+           else
+              printf(" ");
+          }
      printf("\n");
   }
-
+}
