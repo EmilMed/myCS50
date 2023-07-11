@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 int main(void)
-{ // Obtain positive integer in range between 1 and 8
+{
+    // Obtain positive integer in range between 1 and 8
     int n;
     do
     {
