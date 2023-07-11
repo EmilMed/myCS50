@@ -14,10 +14,14 @@ int main(void)
     {
         for (int i = g; i > 1; i--)
         {
-            prinf(".")
+            printf(".");
         }
+        for (int o = 0; o < i; o++)
+        {
+            printf("#\n");
+        }
+        printf("\n");
+        break
     }
-
-    printf("#\n" );
 
 }
