@@ -11,7 +11,7 @@ int main(void)
     while (n > 8 || n < 1);
 
     for (int g = 0; g < n; g++)
-    
+
     printf("#\n" );
 
 }
