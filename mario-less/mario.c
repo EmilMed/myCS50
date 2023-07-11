@@ -12,7 +12,7 @@ int main(void)
 
     for (int g = 0; g < n; g++)
     {
-        for ()
+        for (int i; i < n + 1; i--)
     }
 
     printf("#\n" );
