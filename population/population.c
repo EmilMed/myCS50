@@ -18,7 +18,13 @@ do
   }
   while (x < n);
     // TODO: Calculate number of years until we reach threshold
-    n = (x - n) / ((n / 3) - (n / 4));
+    int y = 0;
+
+    while (n < x)
+{
+    n = n + (n / 3) - (n / 4);
+    y++;
+}
     // TODO: Print number of years
-    printf("Years: %i\n", n);
+    printf("Years: %i\n", y);
 }
