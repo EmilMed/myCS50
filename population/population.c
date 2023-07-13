@@ -12,8 +12,10 @@ do
     // TODO: Prompt for end size
 do
   {
-    
+    n = get_int("End size: ")
   }
+  while (n < 10)
+  for 
     // TODO: Calculate number of years until we reach threshold
 
     // TODO: Print number of years
