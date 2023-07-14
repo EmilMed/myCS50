@@ -40,14 +40,19 @@ int get_cents(void)
     // TODO
     do
     {
-        
+        int cents = get_cents("How many cents?: ")
     }
-    return 0;
+    while cents > 0
+    return cents;
 }
 
 int calculate_quarters(int cents)
 {
     // TODO
+    do
+    {
+        int quarters
+    }
     return 0;
 }
 
