@@ -37,8 +37,8 @@ int compute_score(string word)
 {
     int score = 0;
     // TODO: Compute and return score for string
-    for char in word
+    for (int i = 0; len = strlen(word); i < len; i++)
     {
-        if char == POINTS[]
+        
     }
 }
