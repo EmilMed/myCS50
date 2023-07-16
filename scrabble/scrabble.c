@@ -35,6 +35,7 @@ int main(void)
 
 int compute_score(string word)
 {
+    int score = 0;
     // TODO: Compute and return score for string
     for char in word
     {
