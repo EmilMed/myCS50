@@ -24,9 +24,9 @@ int main(int argc, string argv[])
     printf("The key must contain 26 characters.\n");
     return 1;
   }
-  for(i = 0; i < strlen(key); i++)
+  for(int i = 0; i < strlen(key); i++)
   {
-    for(j = i + 1; j < strlen(key); j++)
+    for(int j = i + 1; j < strlen(key); j++)
     {
       if(toupper(key[i]) == toupper(key[j])
       {
@@ -37,12 +37,14 @@ int main(int argc, string argv[])
   }
    string plaintext = get_string("Plaintext: ");
 
-   for(i = 0; i < strlen(key); i++)
+   for(int i = 0; i < strlen(key); i++)
    {
     if(islower(key[i]))
     {
       key[i] = key[i] - 32;
     }
    }
-   
+   printf("ciphertext: ")
+
+   for(int i = 0; i < strlen();  )
 }
