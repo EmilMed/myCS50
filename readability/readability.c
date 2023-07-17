@@ -5,5 +5,4 @@
 int main(void)
 {
     text = get_string("Text: ")
-    printf(text)
 }
