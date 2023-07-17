@@ -11,7 +11,7 @@ int main(int argc, string argv[])
     return 1;
   }
   string key = argv[1];
-  for(i = 0; i < strlen(key); i++)
+  for(int i = 0; i < strlen(key); i++)
   {
     if (!isalpha(key[i]))
     {
@@ -48,10 +48,20 @@ int main(int argc, string argv[])
 
    for(int i = 0; i < strlen(plaintext); i++)
    {
-    if(isupper(plaintext))
+    if(isupper(plaintext[i]))
     {
-      
+      int letter = plaintext[i] - 65;
+       printf("%c", letter)
+    }
+    else if(islower(plaintext[i]))
+    {
+      int letter = plaintext[i] - 97;
+      printf("%c", letter + 32)
+    }
+    else
+    {
+      printf("%c", plaintext[i])
     }
    }
-
+  printf("\n")
 }
