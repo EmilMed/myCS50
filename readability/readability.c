@@ -6,6 +6,9 @@
 int main(void)
 {
     string text = get_string("Text: ");
-    printf("%s\n", text);
 }
+int letters = 0
 int count_letters(string text)
+{
+    for (i = 0, i )
+}
