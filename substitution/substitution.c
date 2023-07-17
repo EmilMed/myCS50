@@ -4,5 +4,9 @@
 
 int main(int argc, string argv[])
 {
-   string text = get_string("Your)
+  if (argv != 27)
+  {
+   printf("Key must contain 26 characters")
+  }
+  else if (isalpha(argv))
 }
