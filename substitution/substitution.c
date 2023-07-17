@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 int main(int argc, string argv[])
 {
@@ -10,6 +11,10 @@ int main(int argc, string argv[])
   }
   else if (isalnum(argv))
   {
-   
+   printf("Invalid.")
+  }
+  else if (argv[1] = argv[2])
+  {
+
   }
 }
