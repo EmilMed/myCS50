@@ -41,7 +41,8 @@ int main(int argc, string argv[])
    {
     if(islower(key[i]))
     {
-      key[i] = key[i] - 32
+      key[i] = key[i] - 32;
     }
    }
+   
 }
