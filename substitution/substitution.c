@@ -8,5 +8,8 @@ int main(int argc, string argv[])
   {
    printf("Key must contain 26 characters")
   }
-  else if (isalpha(argv))
+  else if (isalnum(argv))
+  {
+   
+  }
 }
