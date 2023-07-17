@@ -1,8 +1,10 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
+#include <math.h>
 
 int main(void)
 {
-    text = get_string("Text: ")
+    string text = get_string("Text: ")
+    printf("%s\n", text)
 }
