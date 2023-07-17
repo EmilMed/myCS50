@@ -4,5 +4,6 @@
 
 int main(void)
 {
-    text = get_string("')
+    text = get_string("Text: ")
+    printf(text)
 }
