@@ -51,12 +51,12 @@ int main(int argc, string argv[])
     if(isupper(plaintext[i]))
     {
       int letter = plaintext[i] - 65;
-       printf("%c", letter);
+       printf("%c", key[letter]);
     }
     else if(islower(plaintext[i]))
     {
       int letter = plaintext[i] - 97;
-      printf("%c", letter + 32);
+      printf("%c", key[letter] + 32);
     }
     else
     {
