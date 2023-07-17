@@ -6,9 +6,6 @@
 int main(void)
 {
     string text = get_string("Text: ");
-}
-int letters = 0
-int count_letters(string text)
-{
+
+    int letters = 0
     for (int i = 0, i )
-}
