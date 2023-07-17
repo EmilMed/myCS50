@@ -14,9 +14,14 @@ int main(int argc, string argv[])
   for(i = 0; i < strlen(key); i++)
   {
     if (!isalpha(key[i]))
+    {
     printf("Usage: ./substitution key\n");
     return 1;
+    }
   }
-  if argv[]
+  if (strlen(key) != 26)
+  {
+    
+  }
 
 }
