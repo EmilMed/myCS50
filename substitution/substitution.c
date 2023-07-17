@@ -28,7 +28,7 @@ int main(int argc, string argv[])
   {
     for(int j = i + 1; j < strlen(key); j++)
     {
-      if(toupper(key[i]) == toupper(key[j])
+      if(toupper(key[i]) == toupper(key[j]))
       {
         printf("Usage: ./substitution key\n");
         return 1;
@@ -44,24 +44,24 @@ int main(int argc, string argv[])
       key[i] = key[i] - 32;
     }
    }
-   printf("ciphertext: ")
+   printf("ciphertext: ");
 
    for(int i = 0; i < strlen(plaintext); i++)
    {
     if(isupper(plaintext[i]))
     {
       int letter = plaintext[i] - 65;
-       printf("%c", letter)
+       printf("%c", letter);
     }
     else if(islower(plaintext[i]))
     {
       int letter = plaintext[i] - 97;
-      printf("%c", letter + 32)
+      printf("%c", letter + 32);
     }
     else
     {
-      printf("%c", plaintext[i])
+      printf("%c", plaintext[i]);
     }
    }
-  printf("\n")
+  printf("\n");
 }
