@@ -36,5 +36,12 @@ int main(int argc, string argv[])
     }
   }
    string plaintext = get_string("Plaintext: ");
-   
+
+   for(i = 0; i < strlen(key); i++)
+   {
+    if(islower(key[i]))
+    {
+      key[i] = key[i] - 32
+    }
+   }
 }
