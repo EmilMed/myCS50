@@ -44,7 +44,7 @@ int main(int argc, string argv[])
       key[i] = key[i] - 32;
     }
    }
-   printf("Ciphertext: ");
+   printf("ciphertext: ");
 
    for(int i = 0; i < strlen(plaintext); i++)
    {
