@@ -18,5 +18,5 @@ int main(void)
         else if (isupper(text[i]))
         letters++;
     }
-    printf("%i letters\n", i);
+    printf("%i letters\n", letters);
 }
