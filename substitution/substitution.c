@@ -46,5 +46,6 @@ int main(int argc, string argv[])
    }
    printf("ciphertext: ")
 
-   for(int i = 0; i < strlen();  )
+   for(int i = 0; i < strlen(plaintext); i++ )
+   
 }
