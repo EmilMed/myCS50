@@ -11,8 +11,12 @@ int main(void)
     int letters = 0;
     for (int i = 0; i < strlen(text); i++)
     {
-        if(islower(text[i])) || (isupper(text[i]))
+        if (islower(text[i]))
+        {
+        letters++;
+        }
+        else if (isupper(text[i]))
         letters++;
     }
-    printf("%i letters\n", i)
+    printf("%i letters\n", i);
 }
