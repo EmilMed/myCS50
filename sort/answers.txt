@@ -6,10 +6,6 @@ sort2 uses: Merge sort
 
 How do you know?: For a large list of numbers sort2 significantly outperforms sort1 and sort3 meaning it is a merge sort.
 
-sort3 uses: TODO
+sort3 uses: Selection sort
 
-Selection sort
-
-How do you know?: TODO
-
-While comparing sort1 and sort3 for already ordered list of numbers, sort3 works almost 2 times slower than sort1. We know that bubble sort is quicker for lists of ordered data than selection sort.
+How do you know?: While comparing sort1 and sort3 for already ordered list of numbers, sort3 works almost 2 times slower than sort1. We know that bubble sort is quicker for lists of ordered data than selection sort.
