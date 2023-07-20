@@ -6,7 +6,7 @@
 #define MAX 9
 
 // Candidates have name and vote count
-typedef structx
+typedef struct
 {
     string name;
     int votes;
@@ -66,12 +66,12 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    for (i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if(strcmp(candidates[i].name, name) == 0)
         {
-            candidate[i].votes++
-            return true
+            candidate[i].votes++;
+            return true;
         }
     }
     return false;
@@ -81,18 +81,18 @@ bool vote(string name)
 void print_winner(void)
 {
   int max_vote = 0;
-  for(i = 0; i < candidate_count; i++)
+  for(int i = 0; i < candidate_count; i++)
   {
     if(candidates[i].votes > max_vote)
     {
         max_vote == candidates[i].votes;
     }
   }
-  for(i = 0; i < candidates_count; i++)
+  for(int i = 0; i < candidates_count; i++)
   {
     if(candidates[i].votes == max_vote)
     {
-        printf("%s", candidates[i].name)
+        printf("%s", candidates[i].name);
     }
   }
     return;
