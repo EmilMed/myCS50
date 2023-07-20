@@ -68,9 +68,14 @@ bool vote(string name)
 {
     if(name = argv[i])
     {
-        
+        candidate_count++;
+        return true;
     }
-    return false;
+    else
+    {
+        return false;
+    }
+
 }
 
 // Print the winner (or winners) of the election
