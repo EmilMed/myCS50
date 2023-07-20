@@ -1,18 +1,10 @@
-sort1 uses: TODO
+sort1 uses: Bubble sort
 
-Bubble sort
+How do you know?: While comparing sort1 and sort3 for already ordered list of numbers, sort1 works almost 2 times quicker than sort3. We know that bubble sort is quicker for lists of ordered data than selection sort.
 
-How do you know?: TODO
+sort2 uses: Merge sort
 
-While comparing sort1 and sort3 for already ordered list of numbers, sort1 works almost 2 times quicker than sort3. We know that bubble sort is quicker for lists of ordered data than selection sort.
-
-sort2 uses: TODO
-
-Merge sort
-
-How do you know?: TODO
-
-For a large list of numbers the time required for arrangment is much faster than for either sort1 or sort3.
+How do you know?: For a large list of numbers sort2 significantly outperforms sort1 and sort3 meaning it is a merge sort.
 
 sort3 uses: TODO
 
