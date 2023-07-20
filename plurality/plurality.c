@@ -6,7 +6,7 @@
 #define MAX 9
 
 // Candidates have name and vote count
-typedef struct
+typedef structx
 {
     string name;
     int votes;
