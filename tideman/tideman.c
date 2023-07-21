@@ -180,7 +180,7 @@ bool creates_cycle(int winner, int loser)
     {
         return true;
     }
-    if (int i = 0; i < candidate_count; i++)
+    if(int i = 0; i < candidate_count; i++)
     {
         if(locked[loser][i])
         {
@@ -211,7 +211,21 @@ void print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        
+        bool x = true;
+
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if(locked[j][i])
+            {
+                x = false;
+                break;
+            }
+        }
+        if (x)
+        {
+            printf("%s\n", candidates[i]);
+            return;
+        }
     }
     return;
 }
