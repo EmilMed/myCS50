@@ -139,13 +139,13 @@ void add_pairs(void)
             {
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
-                pair_count++
+                pair_count++;
             }
             else if(preferences[i][j] < preferences[j][i])
             {
                 pairs[pair_count].winner = j;
                 pairs[pair_count].loser = i;
-                pair_count++
+                pair_count++;
             }
         }
     }
@@ -176,8 +176,21 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // TODO
-    return;
+    if (winner == loser)
+    {
+        return true;
+    }
+    if (int i = 0; i < candidate_count; i++)
+    {
+        if(locked[loser][i])
+        {
+            if(creates_cycle(winner, i))
+            {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 // Print the winner of the election
