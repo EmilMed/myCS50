@@ -174,7 +174,7 @@ void sort_pairs(void)
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
-void lock_pairs(void)
+bool creates_cycle(int winner, int loser)
 {
     if (winner == loser)
     {
@@ -192,6 +192,7 @@ void lock_pairs(void)
     }
     return false;
 }
+void lock_pairs(void)
 
 // Print the winner of the election
 void print_winner(void)
