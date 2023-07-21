@@ -193,6 +193,9 @@ bool creates_cycle(int winner, int loser)
     return false;
 }
 void lock_pairs(void)
+{
+    for (int i = 0)
+}
 
 // Print the winner of the election
 void print_winner(void)
