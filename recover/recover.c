@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
   int JPEG_counter = 0;
 
-  FILE *output = NULL;
+  FILE *outputf = NULL;
 
   char *filename = malloc(8 * sizeof(char));
 
@@ -32,8 +32,12 @@ int main(int argc, char *argv[])
     {
       if(buffer[0] = 0xff && buffer[1] = 0xd8 && buffer[2] = 0xff && (buffer[3] & 0xf0) == 0xe0)
     {
-        sprintf
-        JPEG_counter++
+        sprintf(filename, "%03i.jpg", JPEG_counter);
+
+        outputf = fopen(filename, "w");
+
+        JPEG_counter++;
+
         if (JPEG_counter = 1)
         {
 
