@@ -16,11 +16,13 @@ int main(int argc, char *argv[])
     return 2;
  }
 
+  unsigned char buffer[512];
+
   int JPEG_counter = 0;
 
   FILE *output = NULL;
 
-  unsigned char buffer[512];
+  char *filename = malloc(8 * sizeof(char));
 
  for(i = 0; i < memory card length; i++)
  {
