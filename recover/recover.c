@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
  }
 
  FILE *f = fopen(argv[1], "r");
+ 
  if (f == NULL)
  {
     printf("Could not open file.");
@@ -41,7 +42,7 @@ int main(int argc, char *argv[])
           fwrite(buffer, sizeof(char), 512, outputf);
         }
     }
-    
+
     free(filename);
     fclose(outputf);
     fclose(f);
