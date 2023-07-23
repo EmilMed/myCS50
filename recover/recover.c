@@ -35,13 +35,13 @@ int main(int argc, char *argv[])
         outputf = fopen(filename, "w");
 
         JPEG_counter++;
-
-        if (outputf != NULL)
+    }
+      if (outputf != NULL)
         {
           fwrite(buffer, sizeof(char), 512, outputf);
         }
     }
-    }
+    
     free(filename);
     fclose(outputf);
     fclose(f);
