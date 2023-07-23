@@ -7,5 +7,5 @@ int main(int argc, char *argv[])
  {
 
  }
- FILE *f = fopen()
+ FILE *f = fopen(card_raw, "r")
 }
