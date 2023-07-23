@@ -20,6 +20,8 @@ int main(int argc, char *argv[])
 
   FILE *output = NULL;
 
+  unsigned char buffer[512];
+
  for(i = 0; i < memory card length; i++)
  {
     fread(&buffer, 512 , 1, card_raw)
