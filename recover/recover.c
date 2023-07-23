@@ -16,7 +16,10 @@ int main(int argc, char *argv[])
     return 2;
  }
 
-int JPEG_counter = 0;
+  int JPEG_counter = 0;
+
+  FILE *output = NULL;
+
  for(i = 0; i < memory card length; i++)
  {
     fread(&buffer, 512 , 1, card_raw)
