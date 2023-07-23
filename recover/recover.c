@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#typedef uint8_t BYTE;
+typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
@@ -26,11 +26,9 @@ int main(int argc, char *argv[])
 
   char *filename = malloc(8 * sizeof(char));
 
- for(i = 0; i < memory card length; i++)
-  {
-    while (fread(buffer, sizeof(char) , 512, f))
+  while (fread(buffer, sizeof(char) , 512, f))
     {
-      if(buffer[0] = 0xff && buffer[1] = 0xd8 && buffer[2] = 0xff && (buffer[3] & 0xf0) == 0xe0)
+      if(buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
     {
         sprintf(filename, "%03i.jpg", JPEG_counter);
 
@@ -38,12 +36,16 @@ int main(int argc, char *argv[])
 
         JPEG_counter++;
 
-        if (JPEG_counter = 1)
+        if (outputf != NULL)
         {
-
+          fwrite(buffer, sizeof(char), 512, outputf);
         }
     }
     }
-  }
+    free(filename);
+    fclose(outputf);
+    fclose(f);
+
+    return 0;
 }
 
