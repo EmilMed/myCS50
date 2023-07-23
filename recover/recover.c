@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
 int JPEG_counter = 0;
 
 fread(&buffer, 512 , 1, card_raw)
+if(buffer[0] = oxff && buffer[1] = oxd8 && buffer[2] = oxff && )
 
  for(i = 0; i < memory card length; i++)
  {
