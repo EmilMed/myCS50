@@ -25,11 +25,6 @@ int main(int argc, char *argv[])
 
   FILE *outputf = NULL;
 
-  if (JPEG_counter > 0)
-        {
-          fclose(outputf);
-        }
-
   char *filename = malloc(8 * sizeof(char));
 
   while (fread(buffer, sizeof(char) , 512, f))
