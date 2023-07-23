@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
  for(i = 0; i < memory card length; i++)
  {
-    fread(&buffer, 512 , 1, card_raw)
+    while (fread(buffer, 512 , 1, f))
     if(buffer[0] = 0xff && buffer[1] = 0xd8 && buffer[2] = 0xff && (buffer[3] & 0xf0) == 0xe0)
     {
         sprintf
