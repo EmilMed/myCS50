@@ -14,6 +14,7 @@ int JPEG_counter = 0;
  {
     if(block has oxff, oxd8, oxff and either of any forth ones)
     {
+        open
         JPEG_counter++;
     }
  }
