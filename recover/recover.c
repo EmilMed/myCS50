@@ -40,11 +40,12 @@ int main(int argc, char *argv[])
       if (outputf != NULL)
         {
           fwrite(buffer, sizeof(char), 512, outputf);
+          if (JPEG_counter > 0)
+            {
+              fclose(outputf);
+            }
         }
-      if (JPEG_counter > 0)
-      {
-        fclose(outputf);
-      }
+
     }
 
     free(filename);
