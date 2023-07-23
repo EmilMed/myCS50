@@ -3,11 +3,13 @@
 
 int main(int argc, char *argv[])
 {
- if(argc != 3)
+ if(argc != 2)
  {
-
+    printf("Usage: ./recover IMAGE\n");
+    return 1;
  }
- FILE *f = fopen(card_raw, "r")
+
+ FILE *f = fopen(argv[1], "r")
 
 int JPEG_counter = 0;
  for(i = 0; i < memory card length; i++)
