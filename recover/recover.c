@@ -10,9 +10,11 @@ int main(int argc, char *argv[])
  FILE *f = fopen(card_raw, "r")
 
 int JPEG_counter = 0;
+
+fread(&buffer, 512 , 1, card_raw)
+
  for(i = 0; i < memory card length; i++)
  {
-    fread(&buffer, 512 , 1, )
     if(block has oxff, oxd8, oxff and either of any forth ones)
     {
 
