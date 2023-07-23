@@ -9,7 +9,12 @@ int main(int argc, char *argv[])
     return 1;
  }
 
- FILE *f = fopen(argv[1], "r")
+ FILE *f = fopen(argv[1], "r");
+ if (f == NULL)
+ {
+    printf("Could not open file.");
+    return 2;
+ }
 
 int JPEG_counter = 0;
  for(i = 0; i < memory card length; i++)
