@@ -70,17 +70,13 @@ bool load(const char *dictionary)
 
    while (fscanf(file, "%s", word) != EOF)
     {
-       fscanf("dictionaries/small", "%s", word);
-
-       if (fscanf() = EOF)
-       {
-        break;
-       }
        node *n = malloc(sizeof(word));
+
        if (n == NULL)
        {
         return false;
        }
+       
        strcopy(n->word, word);
        n-> next = table[i];
        table[i] = n;
