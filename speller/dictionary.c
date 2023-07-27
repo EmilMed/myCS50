@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -32,8 +33,16 @@ bool check(const char *word)
     i = hash(word);
 
     node *cursor = table[i];
-    
-    return false;
+
+    while(cursor != 0)
+    {
+        if (strcasecmp(word, cursor->word) == 0)
+        {
+            return true;
+        }
+        cursor = cursor->next;
+    }
+    returns false;
 }
 
 // Hashes word to a number
@@ -72,8 +81,8 @@ bool load(const char *dictionary)
        {
         return false;
        }
-       strcopy(n- >word, word);
-       n- > next = table[i];
+       strcopy(n->word, word);
+       n-> next = table[i];
        table[i] = n;
        sum++;
     }
