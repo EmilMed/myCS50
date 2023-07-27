@@ -42,8 +42,8 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    FILE *file = fopen("", "r");
-    // TODO
+    FILE *file = fopen("dictionaries/small", "r");
+   
     return false;
 }
 
