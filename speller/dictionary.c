@@ -43,7 +43,8 @@ bool load(const char *dictionary)
         return false;
     }
     FILE *file = fopen("dictionaries/small", "r");
-   
+
+   fscaf("dictionaries/small", "%s", word);
     return false;
 }
 
