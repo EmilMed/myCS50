@@ -22,7 +22,7 @@ node;
 const unsigned int N = 45;
 
 unsigned int sum;
-unsigned int i;
+unsigned int hash_value;
 
 // Hash table
 node *table[N];
@@ -42,7 +42,7 @@ bool check(const char *word)
         }
         cursor = cursor->next;
     }
-    returns false;
+    return false;
 }
 
 // Hashes word to a number
@@ -77,7 +77,7 @@ bool load(const char *dictionary)
         return false;
        }
 
-       strcopy(n->word, word);
+       strcpy(n->word, word);
        n-> next = table[hash_value];
        table[hash_value] = n;
        sum++;
