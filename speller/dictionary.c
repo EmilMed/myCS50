@@ -20,7 +20,7 @@ node;
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 45;
 
-unsigned int word_count;
+unsigned int sum;
 unsigned int i;
 
 // Hash table
@@ -80,9 +80,10 @@ bool load(const char *dictionary)
        strcopy(n- >word, word);
        n- > next = table[i];
        table[i] = n;
-       word_count++;
+       sum++;
     }
-   return false;
+   fclose(file);
+   return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
