@@ -47,10 +47,15 @@ bool load(const char *dictionary)
     for(int i = 0; i < LENGTH + 1; i++)
     {
        fscanf("dictionaries/small", "%s", word);
-       
+
        if (fscanf() = EOF)
        {
         break;
+       }
+       node *n = malloc(sizeof(word));
+       if (n == NULL)
+       {
+        return false;
        }
     }
    return false;
