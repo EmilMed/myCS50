@@ -59,7 +59,7 @@ bool load(const char *dictionary)
     }
     char word[LENGTH + 1];
 
-    for(int i = 0; i < LENGTH + 1; i++)
+   while (fscanf(file, "%s", word) != EOF)
     {
        fscanf("dictionaries/small", "%s", word);
 
@@ -73,9 +73,9 @@ bool load(const char *dictionary)
         return false;
        }
        strcopy(n- >word, word);
-       hash[i] = word;
-       n- > word = i;
-       n = i;
+       n- > next = table[hash_value]
+       table[hash_value] = n;
+       word_count++
     }
    return false;
 }
