@@ -59,7 +59,8 @@ bool load(const char *dictionary)
        }
        strcopy(n- >word, word);
        hash[i] = word;
-       n- > word = 
+       n- > word = i;
+       n = i;
     }
    return false;
 }
