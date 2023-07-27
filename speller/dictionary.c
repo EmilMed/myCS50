@@ -30,9 +30,9 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    i = hash(word);
+    hash_value = hash(word);
 
-    node *cursor = table[i];
+    node *cursor = table[hash_value];
 
     while(cursor != 0)
     {
@@ -76,10 +76,10 @@ bool load(const char *dictionary)
        {
         return false;
        }
-       
+
        strcopy(n->word, word);
-       n-> next = table[i];
-       table[i] = n;
+       n-> next = table[hash_value];
+       table[hash_value] = n;
        sum++;
     }
    fclose(file);
