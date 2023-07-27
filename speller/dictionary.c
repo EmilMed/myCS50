@@ -68,7 +68,7 @@ bool load(const char *dictionary)
 
    while (fscanf(file, "%s", word) != EOF)
     {
-       node *n = malloc(sizeof(word));
+       node *n = malloc(sizeof(node));
 
        if (n == NULL)
        {
@@ -76,6 +76,7 @@ bool load(const char *dictionary)
        }
 
        strcpy(n->word, word);
+       hash_value = hash(word);
        n-> next = table[hash_value];
        table[hash_value] = n;
        sum++;
