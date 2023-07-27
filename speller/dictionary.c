@@ -37,20 +37,12 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int sum = 0;
-    for (int j = 0; j < N - 1; j++)
+    int p = 0;
+    for (int j = 0; j < strlen(word); j++)
     {
-        if(strlen(word) = 0)
-        {
-            return 1;
-        }
-        else if (strlen(word) = 1)
-        {
-            int 0 = hash(word)
-        }
-        sum++;
+        p++;
     }
-    return toupper(word[0]) - 'A';
+    return p;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
