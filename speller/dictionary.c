@@ -42,7 +42,7 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    fopen()
+    FILE *file = fopen("", "r");
     // TODO
     return false;
 }
