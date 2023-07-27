@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -17,6 +19,9 @@ node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 45;
+
+unsigned int word_count;
+unsigned int i;
 
 // Hash table
 node *table[N];
@@ -73,9 +78,9 @@ bool load(const char *dictionary)
         return false;
        }
        strcopy(n- >word, word);
-       n- > next = table[hash_value]
-       table[hash_value] = n;
-       word_count++
+       n- > next = table[i];
+       table[i] = n;
+       word_count++;
     }
    return false;
 }
