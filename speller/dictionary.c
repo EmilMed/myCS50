@@ -105,7 +105,6 @@ bool unload(void)
         {
             node *tmp = cursor;
             cursor = cursor->next;
-            tmp = cursor;
             free(tmp);
         }
         if (cursor == NULL && i == N - 1)
