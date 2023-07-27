@@ -44,8 +44,11 @@ bool load(const char *dictionary)
     }
     FILE *file = fopen("dictionaries/small", "r");
 
-   fscaf("dictionaries/small", "%s", word);
-    return false;
+    for(int i = 0; i < LENGTH + 1; i++)
+    {
+       fscanf("dictionaries/small", "%s", word);
+    }
+   return false;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
