@@ -33,9 +33,9 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     int sum = LENGTH;
-    for (int i = 0; str[i] != '/0'; i++)
+    for (int i = 0; word[i] != '/0'; i++)
     {
-        
+
     }
     return toupper(word[0]) - 'A';
 }
