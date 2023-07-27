@@ -109,7 +109,7 @@ bool unload(void)
             tmp = cursor;
             free(tmp);
         }
-        if (cursor == NULL && i )
+        if (cursor == NULL && i < N)
         {
             return true;
         }
