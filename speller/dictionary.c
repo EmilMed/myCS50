@@ -41,7 +41,7 @@ unsigned int hash(const char *word)
         }
         else if (strlen(word) = 1)
         {
-            
+            int 0 = hash(word)
         }
         sum++;
     }
