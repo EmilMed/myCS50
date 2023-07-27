@@ -51,11 +51,14 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    if (dictionary == NULL)
+    FILE *file = fopen(dictionary, "r");
+    if (file == NULL)
     {
+        printf("Could not open file.\n");
         return false;
     }
-    FILE *file = fopen("dictionaries/small", "r");
+
+    
 
     for(int i = 0; i < LENGTH + 1; i++)
     {
