@@ -2,10 +2,10 @@ from cs50 import get_int
 
 
 def main():
-  height = get_height()
-  for i in range(height):
-    for j in range(height):
-      if (i + j > n - 1):
+  x = get_height()
+  for i in range(x):
+    for j in range(x):
+      if (i + j > x - 2):
         print("#")
       else:
         print(" ", end="")
