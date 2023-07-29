@@ -1,13 +1,14 @@
 import cs50 import get_int
 
-while True:
+def main():
+
+
+
+def get_height():
+   while True:
     n = get_int("Height: ")
     if n > 8 and n < 1:
-      break
-return n
-
-for i in row:
-    for j in column:
+      return n
 
 
 
