@@ -1,6 +1,5 @@
 from cs50 import get_int
 
-
     # Ask how many cents the customer is owed
     cents = get_cents()
 
@@ -27,55 +26,36 @@ from cs50 import get_int
     print("\n", + coins)
 
 
-def get_cents()
-    int cents;
-    do
-    {
-        cents = get_int("How many cents?: ");
-    }
-    while (cents < 0);
-    return cents;
+def get_cents():
+    while True:
+        cents = get_int("How many cents?: ")
+        if cents > 0:
+            return cents
 
-int calculate_quarters(int cents)
-{
-    int quarters = 0;
-    while (cents >= 25)
-    {
-        cents = cents - 25;
-        quarters++;
-    }
-    return quarters;
-}
+def calculate_quarters():
+    quarters = 0
+    while cents >= 25:
+        cents = cents - 25
+        quarters += 1
+    return quarters
 
-int calculate_dimes(int cents)
-{
-    int dimes = 0;
-    while (cents >= 10)
-    {
-        cents = cents - 10;
-        dimes++;
-    }
-    return dimes;
-}
+def calculate_dimes():
+    dimes = 0
+    while cents >= 10:
+        cents = cents - 10
+        dimes += 1
+    return dimes
 
-int calculate_nickels(int cents)
-{
-    int nickels = 0;
-    while (cents >= 5)
-    {
-        cents = cents - 5;
-        nickels++;
-    }
-    return nickels;
-}
+def calculate_nickels():
+    nickels = 0
+    while cents >= 5:
+        cents = cents - 5
+        nickels += 1
+    return nickels
 
-int calculate_pennies(int cents)
-{
-    int pennies = 0;
-    while (cents >= 1)
-    {
-        cents = cents - 1;
-        pennies++;
-    }
-    return pennies;
-}
+def calculate_pennies():
+    pennies = 0
+    while cents >= 1:
+        cents = cents - 1
+        pennies += 1
+    return pennies
