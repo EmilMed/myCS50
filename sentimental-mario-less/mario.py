@@ -1,10 +1,5 @@
 from cs50 import get_int
 
-def get_height():
-   while True:
-    n = get_int("Height: ")
-    if n < 9 and n > 0:
-      break
 
 def main():
   n = get_height()
@@ -16,5 +11,11 @@ def main():
         print(" ", end="")
   print()
 
+def get_height():
+   while True:
+    n = get_int("Height: ")
+    if n < 9 and n > 0:
+      break
+    
 main()
 
