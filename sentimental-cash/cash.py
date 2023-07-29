@@ -1,4 +1,4 @@
-from cs50 import get_int
+from cs50 import get_float
 
     # Ask how many cents the customer is owed
     cents = get_cents()
