@@ -8,7 +8,7 @@ def main():
         print("#")
       else
         print(" ")
-   
+  print("\n")
 
 
 def get_height():
