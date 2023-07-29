@@ -1,6 +1,10 @@
+import cs50 import get_int
+
+while True:
+    n = get_int("Height: ")
+    if n > 8 or n < 1;
+        return False
+    else
+        return n
 
 
-n = input("Height: ")
-
-if n < 1 or n > 8:
-    print("Invalid height")
