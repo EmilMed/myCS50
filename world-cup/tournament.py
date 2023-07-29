@@ -15,9 +15,9 @@ def main():
         sys.exit("Usage: python tournament.py FILENAME")
 
     teams = []
-    with open(2018m.csv) as file:
+    with open(sys.argv[1]) as file:
       reader = csv.DictReader(file)
-      
+
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
