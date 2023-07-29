@@ -5,7 +5,7 @@ def main():
   height = get_height()
   for i in range(height):
     for j in range(height):
-      if (i + j) > (height - 2):
+      if (i + j) > (height - 1):
         print("#")
       else:
         print(" ", end="")
