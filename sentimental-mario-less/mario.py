@@ -5,7 +5,7 @@ def main():
   height = get_height()
   for i in range(height):
     for j in range(height):
-      if (i + j) > (n - 2):
+      if (i + j) > (height - 2):
         print("#")
       else:
         print(" ")
@@ -16,6 +16,6 @@ def get_height():
     n = get_int("Height: ")
     if n < 9 and n > 0:
       return n
-    
+
 main()
 
