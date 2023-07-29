@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simluations to run
-N = 1000
+N = 10
 
 
 def main():
@@ -22,11 +22,11 @@ def main():
           teams.append(country)
 
     counts = {}
-    for i in range N:
+    for i in range(N):
         winner = simulate_tournament(teams)
         if winner in counts:
             counts[winner] += 1
-        else
+        else:
             counts[winner] = 1
 
     # Print each team's chances of winning, according to simulation
