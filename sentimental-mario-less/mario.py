@@ -8,8 +8,8 @@ def main():
       if (i + j) > (height - 2):
         print("#")
       else:
-        print(" ")
-  print("\n")
+        print(" ", end="")
+  print()
 
 def get_height():
    while True:
