@@ -17,6 +17,7 @@ def main():
     teams = []
     with open(sys.argv[1]) as file:
       reader = csv.DictReader(file)
+      teams.append()
 
 
     counts = {}
