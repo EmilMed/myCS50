@@ -1,7 +1,7 @@
 from cs50 import get_int
 
     # Ask how many cents the customer is owed
-    dollars = get_dollars()
+    cents = get_cents()
 
     # Calculate the number of quarters to give the customer
     quarters = calculate_quarters(cents)
@@ -26,22 +26,22 @@ from cs50 import get_int
     print("\n", + coins)
 
 
-def get_dollars():
+def get_cents():
     while True:
-        dollars = get_int("How many dollars?: ")
-        if dollars > 0:
-            return dollars
+        cents = get_int("How many dollars?: ")
+        if cents > 0:
+            return cents
 
 def calculate_quarters():
     quarters = 0
-    while dollars >= 25:
-        dollars = dollars - 25
+    while cents >= 25:
+        cents = cents - 25
         quarters += 1
     return quarters
 
 def calculate_dimes():
     dimes = 0
-    while dollars >= 10:
+    while cents >= 10:
         cents = cents - 10
         dimes += 1
     return dimes
