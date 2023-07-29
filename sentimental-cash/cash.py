@@ -26,4 +26,4 @@ while cents >= 1:
     cents = cents - 1
     coins += 1
 
-print("Total amount: " + coins)
+print("Total amount:", coins)
