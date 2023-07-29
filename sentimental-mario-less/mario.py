@@ -1,4 +1,4 @@
-import cs50 import get_int
+from cs50 import get_int
 
 def main():
   height = get_height()
@@ -6,7 +6,7 @@ def main():
     for j in range(height):
       if i + j > n - 2:
         print("#")
-      else
+      else:
         print(" ")
   print("\n")
 
@@ -17,5 +17,5 @@ def get_height():
     if n > 8 and n < 1:
       return n
 
-
+main()
 
