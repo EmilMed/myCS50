@@ -1,10 +1,9 @@
 from cs50 import get_int
 
-
 def main():
   x = get_height()
-  for i in range(x):
-    for j in range(x):
+  for i in range(0, x, 1):
+    for j in range(0, x, 1):
       if (i + j > x - 1):
         print(" ", end="")
       else:
