@@ -10,7 +10,7 @@ def main():
     database = []
     with open(sys.argv[1], 'r') as file:
       reader = csv.DictReader(file)
-          for row in reader:
+      for row in reader:
               database.append(row)
 
     with open(sys.argv[2], 'r') as file:
