@@ -5,6 +5,7 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
+    if sys.
 
     # TODO: Read database file into a variable
 
