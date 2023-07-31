@@ -20,7 +20,7 @@ def main():
 
     finals = {}
     for subsequence in subsequences:
-        final[subsequence] = longest_match(dna_sequence, subsequence)
+        finals[subsequence] = longest_match(dna_sequence, subsequence)
 
     for individual in database:
         bingo = 0
