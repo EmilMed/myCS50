@@ -6,7 +6,7 @@ letters = 0
 words = 1
 sentences = 0
 
-for i in range(len(text)):
+for i in text:
     if i.isalpha():
         letters += 1
     elif i == " ":
