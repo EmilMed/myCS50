@@ -23,7 +23,7 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     subsequence = list(database[0].keys())[1:]
 
-    x = {}
+    finals = {}
     for subsequence in subsequences:
         result[subsequence] = longest_match(dna_sequence, subsequence)
 
