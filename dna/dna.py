@@ -20,12 +20,12 @@ def main():
 
     finals = {}
     for subsequence in subsequences:
-        finals[subsequence] = longest_match(dna_sequence, subsequence)
+        final[subsequence] = longest_match(dna_sequence, subsequence)
 
     for individual in database:
         bingo = 0
         for subsequence in subsequences:
-            if int(individual[subsequence]) == final[subsequence]:
+            if int(individual[subsequence]) == finals[subsequence]:
                 bingo += 1
         if bingo == len(subsequences):
             print(individual["name"])
