@@ -1,1 +1,1 @@
-SELECT AVG(danceability) FROM songs;
+SELECT AVG(energy) FROM songs;
