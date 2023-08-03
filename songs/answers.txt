@@ -1,3 +1,3 @@
  The audio aura of a person listening to top 100 songs of a listener 2018 contains average energy of 0.65906, average valence of 0.484443
  and average danceability of 0.71646.
- This way of calculation may not be reliable because person moods could differ at the beggining and the end of the year. 
+ This way of calculation may not be reliable because person moods could differ at the beggining and the end of the year. This can be fixed by taking an average of the top songs listened by person for the last 5-6 months.
