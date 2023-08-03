@@ -1,1 +1,1 @@
-SELECT AVG(rating)
+SELECT AVG(rating) FROM 
