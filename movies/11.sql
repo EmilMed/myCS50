@@ -1,1 +1,1 @@
-SELECT title FROM movies  LIMIT 5 ORDER BY rating DESC;
+SELECT title FROM movies  LIMIT 5 ORDER BY ratings.rating DESC;
