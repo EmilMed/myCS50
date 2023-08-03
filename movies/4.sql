@@ -1,1 +1,1 @@
-SELECT title FROM movies WHERE id = (SELECT )
+SELECT title FROM movies WHERE movie_id = (SELECT id FROM ratings WHERE rating = 10.0);
