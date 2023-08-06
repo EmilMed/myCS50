@@ -10,4 +10,5 @@ SELECT bakery_security_logs.activity, bakery_security_logs.license_plate, people
 SELECT people.name, atm_transactions.transaction_type FROM people JOIN bank_accounts ON bank_accounts.person_id = people.id JOIN atm_transactions ON atm_transactions.account_number = bank_accounts.account_number WHERE atm_transactions.year = 2021 AND atm_transactions.month = 7 AND atm_transactions.day = 28 AND atm_location = "Leggett Street" AND atm_transactions.transaction_type = "withdraw";
 --CHECK PHONE CALLS FOR NAMES
 SELECT phone_calls.caller, phone_calls.receiver, caller_people.name AS caller_name, receiver_people.name AS receiver_name FROM phone_calls JOIN people AS caller_people ON phone_calls.caller = caller_people.phone_number JOIN people AS receiver_people ON phone_calls.receiver = receiver_people.phone_number WHERE phone_calls.year = 2021 AND phone_calls.month = 7 AND phone_calls.day = 28 AND phone_calls.duration < 60;
---CHECK FOR 
+--CHECK FOR FLIGHTS FROM FIFTYVILLE
+SELECT id, origin_airport, destintaion_airport
