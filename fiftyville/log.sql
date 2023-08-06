@@ -11,4 +11,4 @@ SELECT people.name, atm_transactions.transaction_type FROM people JOIN bank_acco
 --CHECK PHONE CALLS FOR NAMES
 SELECT phone_calls.caller, phone_calls.receiver, caller_people.name AS caller_name, receiver_people.name AS receiver_name FROM phone_calls JOIN people AS caller_people ON phone_calls.caller = caller_people.phone_number JOIN people AS receiver_people ON phone_calls.receiver = receiver_people.phone_number WHERE phone_calls.year = 2021 AND phone_calls.month = 7 AND phone_calls.day = 28 AND phone_calls.duration < 60;
 --CHECK FOR FLIGHTS FROM FIFTYVILLE
-SELECT id, hour, minute, origin_airport_id, destination_airport_id from flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour ASC LIMIT 1;
+SELECT id, hour, minute, origin_airport_id AS airport.city, destination_airport_id AS airports.city FROM flights WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour ASC LIMIT 1;
