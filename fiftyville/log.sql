@@ -14,11 +14,11 @@ SELECT phone_calls.caller, phone_calls.receiver, caller_people.name AS caller_na
 UPDATE flights
 SET origin_airport_id = airports.city
 FROM airports
-WHEN flights.origin_airport_id = airports.id;
+WHERE flights.origin_airport_id = airports.id;
 
 UPDATE flights
 SET destination_airport_id = airports.city
 FROM airports
-WHEN flights.destination_airport_id = airports.id;
+WHERE flights.destination_airport_id = airports.id;
 
 SELECT id, hour, minute, origin_airport_id, destination_airport_id FROM flights JOIN  WHERE year = 2021 AND month = 7 AND day = 29 ORDER BY hour ASC LIMIT 1;
