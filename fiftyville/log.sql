@@ -7,4 +7,4 @@ SELECT transcript FROM interviews WHERE year = 2021 AND month = 7 AND day = 28 A
 --CHECK BAKERY CAMERAS FOR LICENSE PLATES
 SELECT bakery_security_logs.activity, bakery_security_logs.license_plate, people.name FROM people JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate WHERE bakery_security_logs.year = 2021 AND bakery_security_logs.month = 7 AND bakery_security_logs.day = 28 AND bakery_security_logs.hour = 10 AND bakery_security_logs.minute > 15 AND bakery_security_logs.minute < 25;
 --CHECK FOR ATM WITHDRAWALS
-SELECT name, atm_trsnsactions.transaction_type FROM people JOIN people ON people.id = bank_accounts.person_id JOIN bank_accounts ON bank_accounts
+SELECT name, atm_trsnsactions.transaction_type FROM people JOIN people ON bank_accounts.person_id = people.id JOIN bank_accounts ON bank_accounts
