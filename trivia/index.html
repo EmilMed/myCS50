@@ -20,7 +20,10 @@
                         document.querySelector("#answer.1").innerHTML = "Incorrect!";
                     })
                 }
-                document.querySelector("#check")
+                document.querySelector("#check").addEventListener("click", function(){
+                    let input = document.querySelector("input");
+                    if (input.value.toLowerCase() == "195")
+                })
             })
         </script>
     </head>
