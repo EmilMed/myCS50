@@ -24,7 +24,11 @@
                     let input = document.querySelector("input");
                     if (input.value.toLowerCase() == "195") {
                         input.style.backgroundColor = "green";
-                        document.querySelector("#answer.1").innerHTML
+                        document.querySelector("#answer.1").innerHTML = "Correct!";
+                    }
+                    else {
+                        input.style.bakgroundColor = "red";
+                        document.querySelector("#answer.1").innerHTML = "Incorrect!";
                     }
                 })
             })
