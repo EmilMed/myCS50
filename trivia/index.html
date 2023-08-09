@@ -13,7 +13,14 @@
                     document.querySelector("#answer.0").innerHTML = "Correct!";
                 });
 
-                let incorrect = document.querySelector
+                let incorrect = document.querySelectorAll("incorrect");
+                for(let i = 0; i < incorrect.length, i++) {
+                    incorrect[i].addEventListener("click", function(){
+                        incorrect[i].style.backgroundColor="red";
+                        document.querySelector("#answer.1").innerHTML = "Incorrect!";
+                    })
+                }
+                
             })
         </script>
     </head>
@@ -27,9 +34,9 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <h3> What is one mile equivalent to?(in km) </h3>
-                <button class="incorrect">1 kilometer</button>
+                <button class="incorrect">1.79 kilometers</button>
                 <button class="incorrect">1.42 kilometers</button>
-                <button class="correct">1.67 kilometers</button>
+                <button class="correct">1.61 kilometers</button>
 
                 <p id="answer.0"></p>
             </div>
