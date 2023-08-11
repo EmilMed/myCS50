@@ -11,25 +11,25 @@
             let correct = document.querySelector('.correct');
             correct.addEventListener('click', function(){
                 correct.style.backgroundColor = "green";
-                document.querySelector("#answer.0").innerHTML = "Correct!";
+                document.querySelector("#answer0").innerHTML = "Correct!";
             });
 
             let incorrect = document.querySelectorAll("incorrect");
             for(let i = 0; i < incorrect.length, i++) {
                 incorrect[i].addEventListener("click", function(){
                     incorrect[i].style.backgroundColor="red";
-                    document.querySelector("#answer.0").innerHTML = "Incorrect!";
+                    document.querySelector("#answer0").innerHTML = "Incorrect!";
                 });
             }
             document.querySelector("#check").addEventListener("click", function(){
                 let input = document.querySelector("input");
                 if (input.value.toLowerCase() == "195") {
                     input.style.backgroundColor = "green";
-                    document.querySelector("#answer.1").innerHTML = "Correct!";
+                    document.querySelector("#answer1").innerHTML = "Correct!";
                 }
                 else {
                     input.style.bakgroundColor = "red";
-                    document.querySelector("#answer.1").innerHTML = "Incorrect!";
+                    document.querySelector("#answer1").innerHTML = "Incorrect!";
                 }
             });
         });
@@ -48,7 +48,7 @@
                 <button class="incorrect" type = "text">1.42 kilometers</button>
                 <button class="correct" type = "text">1.61 kilometers</button>
 
-                <p id="answer.0"></p>
+                <p id="answer0"></p>
             </div>
 
             <div class="section">
@@ -59,7 +59,7 @@
                     <input type="number" placeholder="Number">
                     <button id="check">Check Answer</button>
 
-                    <p id="answer.1"></p>
+                    <p id="answer1"></p>
                 </form>
 
             </div>
