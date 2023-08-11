@@ -7,30 +7,31 @@
         <title>Trivia!</title>
     </head>
     <script>
-        document.addEventListener('DOMContentLoaded', function(){
+        document.addEventListener('DOMContentLoaded', function() {
             let correct = document.querySelector('.correct');
-        correct.addEventListener('click', function(){
-            correct.style.backgroundColor = "green";
-            document.querySelector("#answer.0").innerHTML = "Correct!";
-        });
-        let incorrect = document.querySelectorAll("incorrect");
-        for(let i = 0; i < incorrect.length, i++) {
-            incorrect[i].addEventListener("click", function(){
-                incorrect[i].style.backgroundColor="red";
-                document.querySelector("#answer.0").innerHTML = "Incorrect!";
+            correct.addEventListener('click', function(){
+                correct.style.backgroundColor = "green";
+                document.querySelector("#answer.0").innerHTML = "Correct!";
             });
-        }
-        document.querySelector("#check").addEventListener("click", function(){
-            let input = document.querySelector("input");
-            if (input.value.toLowerCase() == "195") {
-                input.style.backgroundColor = "green";
-                document.querySelector("#answer.1").innerHTML = "Correct!";
+
+            let incorrect = document.querySelectorAll("incorrect");
+            for(let i = 0; i < incorrect.length, i++) {
+                incorrect[i].addEventListener("click", function(){
+                    incorrect[i].style.backgroundColor="red";
+                    document.querySelector("#answer.0").innerHTML = "Incorrect!";
+                });
             }
-            else {
-                input.style.bakgroundColor = "red";
-                document.querySelector("#answer.1").innerHTML = "Incorrect!";
-            }
-        });
+            document.querySelector("#check").addEventListener("click", function(){
+                let input = document.querySelector("input");
+                if (input.value.toLowerCase() == "195") {
+                    input.style.backgroundColor = "green";
+                    document.querySelector("#answer.1").innerHTML = "Correct!";
+                }
+                else {
+                    input.style.bakgroundColor = "red";
+                    document.querySelector("#answer.1").innerHTML = "Incorrect!";
+                }
+            });
         });
     </script>
     <body>
