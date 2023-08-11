@@ -20,7 +20,7 @@
                 <button class="incorrect" type = "text">1.42 kilometers</button>
                 <button class="correct" type = "text">1.61 kilometers</button>
 
-                <p id="answer0"></p>
+                <p id="feedback1"></p>
             </div>
 
             <div class="section">
@@ -31,7 +31,7 @@
                     <input type="text" placeholder="Country">
                     <button id="check">Check Answer</button>
 
-                    <p id="feedback1"></p>
+                    <p id="feedback2"></p>
                 </form>
 
             </div>
@@ -55,11 +55,11 @@
                     let input = document.querySelector("input");
                     if (input.value.toLowerCase() == "Russia") {
                         input.style.backgroundColor = "green";
-                        document.querySelector("#answer1").innerHTML = "Correct!";
+                        document.querySelector("#feedback2").innerHTML = "Correct!";
                     }
                     else {
                         input.style.bakgroundColor = "red";
-                        document.querySelector("#answer1").innerHTML = "Incorrect!";
+                        document.querySelector("#feedback2").innerHTML = "Incorrect!";
                     }
                 });
             });
