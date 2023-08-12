@@ -1,6 +1,6 @@
 
 .one {
-    background-color: green;
+    background-color: black;
     background-image: url("https://images.pexels.com/photos/997443/pexels-photo-997443.jpeg?auto=compress&cs=tinysrgb&w=1600");
     object-fit: contain;
     height:1005px;
@@ -13,5 +13,8 @@
 .header {
     color: white;
     font-family: "pacifico", cursive;
-
+    text-align: center;
+}
+.header span{
+    color: white;
 }
