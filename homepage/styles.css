@@ -10,11 +10,19 @@
     background-size: 100%;
 }
 
-.cotainer {
-    top: 80%;
-    left: 80%;
-}
 .container span{
     color: white;
     font-family: "pacifico", cursive;
+    display: block;
+}
+
+.container{
+    text-align: center;
+    width: 100%;
+}
+
+.header{
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 5px;
 }
