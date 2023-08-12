@@ -25,7 +25,7 @@
     font-size: 70px;
     font-weight: 700;
     letter-spacing: 6px;
-    margin-bottom: -70px;
+    margin-bottom: 20px;
     background: transparent;
     position: relative;
     animation: text 3s 1;
@@ -39,7 +39,7 @@
 
 @keyframes text{
     0%{
-        color:black;
+        color:transparent;
         margin-bottom: -70px;
     }
     30%{
@@ -48,6 +48,6 @@
     }
     85%{
         letter-spacing: 7px;
-        margin-bottom: 
+        margin-bottom: -70px;
     }
 }
