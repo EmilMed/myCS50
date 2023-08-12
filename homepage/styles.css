@@ -1,9 +1,10 @@
 .one {
     background-color: green;
     background-image: url("https://images.pexels.com/photos/997443/pexels-photo-997443.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    object-fit: contain;
     height:1005px;
     width:1800px;
-    object-fit: contain;
-    padding: 20em;
+    padding: 10em;
     background-repeat: no-repeat;
+    background-size: 100%;
 }
