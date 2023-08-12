@@ -5,12 +5,12 @@
     object-fit: contain;
     height:1005px;
     width:1800px;
-    padding: 10em;
+    padding: 8em;
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
 .header {
     color: white;
-    font-family: "Memphis River", sans-serif;
+    font-family: "pacifico", cursive;
 }
