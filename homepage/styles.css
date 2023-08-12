@@ -1,5 +1,8 @@
 
 .one {
+    background-image: linear-gradient(to bottom
+    rgba(0,0,0,1),
+    rgba(0,0,0,0));
     background-image: url("https://images.pexels.com/photos/997443/pexels-photo-997443.jpeg?auto=compress&cs=tinysrgb&w=1600");
     object-fit: contain;
     height:1005px;
@@ -7,12 +10,6 @@
     padding: 8em;
     background-repeat: no-repeat;
     background-size: 100%;
-}
-
-.one > header{
-    background-image: linear-gradient(to bottom
-    rgba(0,0,0,1),
-    rgba(0,0,0,0));
 }
 
 .container span{
