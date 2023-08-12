@@ -28,10 +28,26 @@
     margin-bottom: -70px;
     background: transparent;
     position: relative;
+    animation: text 3s 1;
 }
 
 .header2{
     font-size: 40px;
     font-weight: 700;
     letter-spacing: 4px;
+}
+
+@keyframes text{
+    0%{
+        color:black;
+        margin-bottom: -70px;
+    }
+    30%{
+        letter-spacing: 20px;
+        margin-bottom: -70px;
+    }
+    85%{
+        letter-spacing: 7px;
+        margin-bottom: 
+    }
 }
