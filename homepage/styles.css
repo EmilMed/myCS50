@@ -26,9 +26,9 @@
     font-weight: 700;
     letter-spacing: 6px;
     margin-bottom: 20px;
-    background: transparent;
+    background: #2E2E2E;
     position: relative;
-    animation: text 3s 1;
+    animation: text 2s 1;
 }
 
 .header2{
