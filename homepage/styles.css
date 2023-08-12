@@ -22,7 +22,14 @@
 }
 
 .header{
+    font-size: 70px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-bottom: -50px;
+}
+
+.header2{
     font-size: 40px;
     font-weight: 700;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 }
