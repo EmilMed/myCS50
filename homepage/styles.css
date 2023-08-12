@@ -1,5 +1,8 @@
 
-@font-face {}
+@font-face {
+    font-family: "Memphis River";
+    src: url(fonts/MemphisRiver.ttf);
+}
 
 .one {
     background-color: green;
@@ -14,4 +17,5 @@
 
 .header {
     color: white;
+    font-family
 }
