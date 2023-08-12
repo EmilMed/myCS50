@@ -1,4 +1,6 @@
 .one {
-    background-image: url("https://images.pexels.com/photos/997443/pexels-photo-997443.jpeg?auto=compress&cs=tinysrgb&w=1600")
-    height: 400px;
+    background-color: green;
+    background-image: url("https://images.pexels.com/photos/997443/pexels-photo-997443.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    height: 1200px;
+    width: 2200px;
 }
