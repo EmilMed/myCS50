@@ -57,6 +57,7 @@
     letter-spacing: 2px;
     font-family: 'pacifico', cursive;
     margin:0;
+    opacity:0;
 }
 
 .hlinks h2{
