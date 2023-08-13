@@ -93,12 +93,11 @@
     color: white;
     font-family: "pacifico";
     font-size: 50px;
-    animation: ani1 0.75s ease-out 3s forwards;
     margin-bottom: 100px;
 }
 .hcontainer p2{
     font-size: 60px;
-    margin-bottom: 0px;
+    animation: ani1 0.75s ease-out 4s forwards;
 }
 
 
