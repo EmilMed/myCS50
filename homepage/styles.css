@@ -52,24 +52,23 @@
 }
 
 .hlinks{
-    color: white;
+    color: transparent;
     font-size: 25px;
     letter-spacing: 2px;
     font-family: 'pacifico', cursive;
-    margin:0;
 }
 
-.hlinks h2{
-    opacity:0;
+.hlinks p1{
     color: white;
+    opacity:0;
     animation: ani1 0.75s ease-out 3s forwards;
 }
-.hlinks h3{
+.hlinks p2{
     opacity:0;
     color: white;
     animation: ani1 0.75s ease-out 3.5s forwards;
 }
-.hlinks h4{
+.hlinks p3{
     opacity:0;
     color: white;
     animation: ani1 0.75s ease-out 4s forwards;
