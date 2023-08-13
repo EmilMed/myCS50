@@ -56,4 +56,24 @@
     font-size: 25px;
     letter-spacing: 2px;
     font-family: 'pacfico', cursive;
+    opacity:0;
+    margin:0;
+}
+
+.link1{
+    color: white;
+    animation: ani1 0.75s ease-out 3s forwards;
+}
+.link2{
+    color: white;
+    animation: ani1 0.75s ease-out 4s forwards;
+}
+.link3{
+    color: white;
+    animation: ani1 0.75s ease-out 5s forwards;
+}
+@keyframes ani1{
+    100%{
+        opacity: 1;
+    }
 }
