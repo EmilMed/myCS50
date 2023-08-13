@@ -87,8 +87,11 @@
 }
 
 #hheader{
+    background-image: url("https://images.pexels.com/photos/1331750/pexels-photo-1331750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     object-fit: contain;
     height:1005px;
     width:1800px;
-    background-image: url("https://images.pexels.com/photos/1331750/pexels-photo-1331750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+    padding: 8em;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
