@@ -91,14 +91,17 @@
     width:100%;
     color: white;
     font-family: "pacifico";
-    font-size: 50px;
-    margin-bottom: 100px;
+}
+.hcontainer p1{
+    font-size: 40px;
+    opacity:0;
+    animation: ani1 0.75s ease-out 0.5s forwards;
 }
 .hcontainer p2{
-    font-size: 60px;
-    animation: ani1 0.75s ease-out 4s forwards;
+    font-size: 80px;
+    opacity:0;
+    animation: ani1 0.75s ease-out 1.5s forwards;
 }
-
 
 @keyframes ani1{
     100%{
