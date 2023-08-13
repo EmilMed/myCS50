@@ -76,11 +76,6 @@
     color: white;
     animation: ani1 0.75s ease-out 4s forwards;
 }
-@keyframes ani1{
-    100%{
-        opacity: 1;
-    }
-}
 .links{
     color:white;
 }
@@ -91,4 +86,17 @@
     height:100vh;
     background-size:cover;
     background-position:center;
+}
+
+
+
+
+
+
+
+
+@keyframes ani1{
+    100%{
+        opacity: 1;
+    }
 }
