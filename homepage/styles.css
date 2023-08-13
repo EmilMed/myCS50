@@ -58,11 +58,11 @@
     font-family: 'pacifico', cursive;
     opacity:0;
     margin:0;
-    animation: ani1 075s ease-out 3s forwards;
+    animation: ani1 0.75s ease-out 3s forwards;
 }
 
 .link1{
-    color: white;
+    color: red;
     animation: ani1 0.75s ease-out 3s forwards;
 }
 .link2{
