@@ -52,7 +52,8 @@
 }
 
 .hlinks{
+    color: white;
     font-size: 25px;
     letter-spacing: 2px;
-    font-family: 'sans-serif';
+    font-family: 'pacfico', cursive;
 }
