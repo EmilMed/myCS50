@@ -87,8 +87,18 @@
     background-size:cover;
     background-position:center;
 }
-
-
+.hcontainer{
+    padding: 100px 60%;
+    width:100%;
+    color: white;
+    font-family: "pacifico";
+    font-size: 50px;
+    animation: ani1 0.75s ease-out 3s forwards;
+}
+.hcontainer p2{
+    font-size: 60px;
+    margin-bottom: 60px;
+}
 
 
 @keyframes ani1{
