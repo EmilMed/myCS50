@@ -62,8 +62,8 @@
 }
 
 .hlinks p1{
-    color: white;
     opacity:0;
+    color: white;
     animation: ani1 0.75s ease-out 3s forwards;
 }
 .hlinks p2{
@@ -77,9 +77,6 @@
     animation: ani1 0.75s ease-out 4s forwards;
 }
 .links{
-    color:white;
-}
-.nav-item{
     color:white;
 }
 
