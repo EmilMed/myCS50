@@ -116,6 +116,7 @@
     width: 100%;
     overflow-x: hidden;
     background-size:cover;
+    background-repeat: no-repeat;
     background-position:center;
     object-fit:scale-down;
 }
