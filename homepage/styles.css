@@ -104,6 +104,11 @@
     opacity:0;
     animation: ani1 0.75s ease-out 1.5s forwards;
 }
+.hcontainer p3{
+    font-size: 20px;
+    opacity:0;
+    animation: ani1 0.75s ease-out 2s forwards;
+}
 
 @keyframes ani1{
     100%{
