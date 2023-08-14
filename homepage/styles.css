@@ -114,3 +114,11 @@
         opacity: 1;
     }
 }
+.education{
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.abbeycambridge.co.uk%2Fwhats-on%2Fnews%2F&psig=AOvVaw1gGi4z0D1qd0LROuw3TQ_I&ust=1692108007746000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqGAoTCJiA2den3IADFQAAAAAdAAAAABDkAQ")
+    height:100vh;
+    width: 100%;
+    overflow-x: hidden;
+    background-size:cover;
+    background-position:center;
+}
