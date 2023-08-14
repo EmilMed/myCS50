@@ -117,6 +117,7 @@
     overflow-x: hidden;
     background-size:cover;
     background-position:center;
+    object-fit:cover;
 }
 
 @keyframes ani1{
