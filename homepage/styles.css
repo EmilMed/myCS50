@@ -138,8 +138,19 @@
     font-size: 50px;
 }
 .a2container{
-    font-size
+    padding: 10% 10%;
+    font-size: 20px;
 }
+.acontainer{
+    text-align: center;
+}
+.acontainer p1{
+    font size: 30px;
+}
+.acontainer p2{
+    font size: 50px;
+}
+
 @keyframes ani1{
     100%{
         opacity: 1;
