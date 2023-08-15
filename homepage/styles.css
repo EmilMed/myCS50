@@ -152,17 +152,32 @@
     color:white;
     font-family: 'sans-serif';
 }
+.acontainer span{
+    display:block;
+}
 .acontainer{
     text-align: center;
     color:white;
     font-size: 40px;
     font-family: 'sans-serif';
 }
-.acontainer p1{
+.aheader{
     font size: 30px;
 }
-.acontainer p2{
+.aheader2{
     font size: 50px;
+}
+.a2container p3{
+    opacity:0;
+    animation: ani1 0.75s ease-out 1s forwards;
+}
+.a2container p4{
+    opacity:0;
+    animation: ani1 0.75s ease-out 1.3s forwards;
+}
+.a2container p5{
+    opacity:0;
+    animation: ani1 0.75s ease-out 1.6s forwards;
 }
 
 @keyframes ani1{
