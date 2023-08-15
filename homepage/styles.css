@@ -146,15 +146,17 @@
     background-size: 100% 1050px;
 }
 .a2container{
-    padding: 20% 56%;
+    padding: 15% 56%;
     width:200%;
     font-size: 22px;
     color:white;
+    font-family: 'sans-serif';
 }
 .acontainer{
     text-align: center;
     color:white;
-    font-size: 30px;
+    font-size: 40px;
+    font-family: 'sans-serif';
 }
 .acontainer p1{
     font size: 30px;
