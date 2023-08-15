@@ -114,7 +114,7 @@
     background-image: url("https://www.abbeycambridge.co.uk/wp-content/uploads/2022/03/Abbey-College-Cambridge-Main-Entrance-1560x520.png");
     height:100vh;
     overflow-x: hidden;
-    background-position:center;
+    background-position:50% 50%;
     background-repeat: no-repeat;
 }
 .econtainer{
