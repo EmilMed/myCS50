@@ -142,7 +142,7 @@
     background-repeat: no-repeat;
     overflow-x:hidden;
     height:100vh;
-    background-size: 100% 1200px;
+    background-size: 100% 100%;
 }
 .a2container{
     padding: 5% 53%;
