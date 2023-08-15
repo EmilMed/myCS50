@@ -146,12 +146,14 @@
     background-size: 100% 1050px;
 }
 .a2container{
-    padding: 20% 50%;
+    padding: 20% 56%;
     width:200%;
-    font-size: 20px;
+    font-size: 22px;
+    color:white;
 }
 .acontainer{
     text-align: center;
+    color:white;
 }
 .acontainer p1{
     font size: 30px;
