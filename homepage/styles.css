@@ -227,6 +227,10 @@
 .post-rating:not(.post-rating-selected) > .post-rating-button:hover {
 	color: #000000;
 }
+@media screen and max(width:200px)
+{
+    
+}
 
 @keyframes ani1{
     100%{
