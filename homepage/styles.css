@@ -229,7 +229,14 @@
 }
 @media screen and max(width:200px)
 {
-    
+    .one {
+        background-image: url("https://images.pexels.com/photos/997443/pexels-photo-997443.jpeg?auto=compress&cs=tinysrgb&w=1600");
+        padding: 10em;
+        width:100%;
+        height:100vh;
+        background-size:cover;
+        background-position:center;
+    }
 }
 
 @keyframes ani1{
