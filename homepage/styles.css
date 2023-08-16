@@ -322,10 +322,11 @@
     }
     .achievements{
         background-image: url("https://images.pexels.com/photos/745365/pexels-photo-745365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        height:100vh;
+        overflow-x: hidden;
+        background-size: 100% 600px;
         background-repeat: no-repeat;
-        overflow-x:hidden;
-        height:70vh;
-        background-size: 100% 50%;
+        background-color:#033049;
     }
     .a2container{
         padding: 5% 53%;
