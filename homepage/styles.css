@@ -272,6 +272,12 @@
         font-size: 15px;
         margin-right: 10px;
     }
+    .hcontainer{
+        padding: 100px 60%;
+        width: 200%;
+        color: white;
+        font-family: "pacifico";
+    }
 
 }
 
