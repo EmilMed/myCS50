@@ -256,6 +256,12 @@
         font-weight: 70;
         letter-spacing: 4px;
     }
+    .hlinks{
+        color: transparent;
+        font-size: 15px;
+        letter-spacing: 2px;
+        font-family: 'sans-sariff';
+    }
 }
 
 @keyframes ani1{
