@@ -318,20 +318,20 @@
     .econtainer p2{
         opacity:0;
         animation: ani1 0.75s ease-out 0.8s forwards;
-        font-size: 20px;
+        font-size: 35px;
     }
     .achievements{
         background-image: url("https://images.pexels.com/photos/745365/pexels-photo-745365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-        height:100vh;
+        height:90vh;
         overflow-x: hidden;
         background-size: 100% 500px;
         background-repeat: no-repeat;
-        background-color:black;
+        background-color: black;
     }
     .a2container{
         padding: 5% 53%;
         width:150%;
-        font-size: 15px;
+        font-size: 16px;
         color:transparent;
         font-family: 'sans-serif';
     }
@@ -342,7 +342,7 @@
         text-align: center;
         width:100%;
         color:white;
-        font-size: 10px;
+        font-size: 15px;
         font-family: 'sans-serif';
         padding: 2% 25%;
     }
@@ -353,7 +353,7 @@
     }
     .aheader2{
         opacity:0;
-        font-size: 35px;
+        font-size: 30px;
         animation: ani1 0.75s ease-out 0.8s forwards;
 
     }
