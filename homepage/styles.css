@@ -263,10 +263,16 @@
         font-family: 'sans-sariff';
     }
     .post-ratings-container {
+        padding: 2em;
         opacity:1;
         width:20%;
         animation: ani1 0.75s ease-out 4.5s forwards;
     }
+    .post-text{
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
 }
 
 @keyframes ani1{
