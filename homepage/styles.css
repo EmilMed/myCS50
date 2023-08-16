@@ -210,13 +210,13 @@
 
 .post-rating-selected > .post-rating-button,
 .post-rating-selected > .post-rating-count {
-	color: #009578;
+	color: #2B3235;
 }
 
 .post-rating-button {
 	margin-right: 6px;
 	cursor: pointer;
-	color: #555555;
+	color: #2B3235;
 }
 
 .post-rating:not(.post-rating-selected) > .post-rating-button:hover {
