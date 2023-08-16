@@ -318,15 +318,15 @@
     .econtainer p2{
         opacity:0;
         animation: ani1 0.75s ease-out 0.8s forwards;
-        font-size: 30px;
+        font-size: 20px;
     }
     .achievements{
         background-image: url("https://images.pexels.com/photos/745365/pexels-photo-745365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
         height:100vh;
         overflow-x: hidden;
-        background-size: 100% 600px;
+        background-size: 100% 500px;
         background-repeat: no-repeat;
-        background-color:#033049;
+        background-color:black;
     }
     .a2container{
         padding: 5% 53%;
