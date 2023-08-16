@@ -199,8 +199,7 @@
 }
 
 .post-rating {
-	display: flex;
-	align-items: center;
+	align-items: right;
 	cursor: default;
 }
 
@@ -210,7 +209,7 @@
 
 .post-rating-selected > .post-rating-button,
 .post-rating-selected > .post-rating-count {
-	color: #2B3235;
+	color: #2BA523;
 }
 
 .post-rating-button {
