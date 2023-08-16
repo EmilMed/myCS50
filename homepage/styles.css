@@ -227,7 +227,7 @@
 .post-rating:not(.post-rating-selected) > .post-rating-button:hover {
 	color: #000000;
 }
-@media screen and max(width:200px)
+@media screen and max(width:600px)
 {
     .header{
         font-size: 5px;
