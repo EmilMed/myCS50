@@ -4,7 +4,11 @@
     margin:0;
 }
 .one {
-    ≈
+    background-image: url("https://images.pexels.com/photos/745365/pexels-photo-745365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat;
+    overflow-x:hidden;
+    height:100vh;
+    background-size: 100% 100%;
 }
 
 .container span{
