@@ -201,7 +201,7 @@
 	display: flex;
 	justify-content: end;
     padding: 12px 0;
-    animation: ani1 0.75s ease-out 5s forwards;
+    animation: ani1 0.75s ease-out 4.5s forwards;
 }
 
 .post-rating {
