@@ -298,15 +298,14 @@
         background-image: url("https://www.abbeycambridge.co.uk/wp-content/uploads/2022/03/Abbey-College-Cambridge-Main-Entrance-1560x520.png");
         height:100vh;
         overflow-x: hidden;
-        background-size: 100% 750px;
-        background-position:50% 50%;
+        background-size: 100% 300px;
         background-repeat: no-repeat;
         background-color:#033049;
     }
     .econtainer{
         text-align: center;
         letter-spacing: 2px;
-        margin-bottom: 0px;
+        margin-bottom: 20px;
         font-family: 'sans-serif';
         color:white;
         background: #033049;
@@ -319,7 +318,7 @@
     .econtainer p2{
         opacity:0;
         animation: ani1 0.75s ease-out 0.8s forwards;
-        font-size: 50px;
+        font-size: 30px;
     }
 }
 
