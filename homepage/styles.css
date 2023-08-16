@@ -188,14 +188,20 @@
     animation: ani1 0.75s ease-out 1.6s forwards;
 }
 .post {
-	width: 400px;
+	width: 1500px;
 	font-family: 'Lexend', sans-serif;
+}
+.post-text{
+    font-size: 20px;
+    margin-right: 20px;
 }
 
 .post-ratings-container {
+    opacity:0;
 	display: flex;
 	justify-content: end;
     padding: 12px 0;
+    animation: ani1 0.75s ease-out 5s forwards;
 }
 
 .post-rating {
@@ -215,7 +221,7 @@
 .post-rating-button {
 	margin-right: 6px;
 	cursor: pointer;
-	color: #2B3235;
+	color: #FCFCFC;
 }
 
 .post-rating:not(.post-rating-selected) > .post-rating-button:hover {
