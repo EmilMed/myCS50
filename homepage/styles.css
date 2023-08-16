@@ -320,6 +320,57 @@
         animation: ani1 0.75s ease-out 0.8s forwards;
         font-size: 30px;
     }
+    .achievements{
+        background-image: url("https://images.pexels.com/photos/745365/pexels-photo-745365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        background-repeat: no-repeat;
+        overflow-x:hidden;
+        height:70vh;
+        background-size: 100% 50%;
+    }
+    .a2container{
+        padding: 5% 53%;
+        width:150%;
+        font-size: 15px;
+        color:transparent;
+        font-family: 'sans-serif';
+    }
+    .acontainer span{
+        display:block;
+    }
+    .acontainer{
+        text-align: center;
+        width:100%;
+        color:white;
+        font-size: 10px;
+        font-family: 'sans-serif';
+        padding: 2% 25%;
+    }
+    .aheader{
+        opacity:0;
+        font-size: 20px;
+        animation: ani1 0.75s ease-out 0.2s forwards;
+    }
+    .aheader2{
+        opacity:0;
+        font-size: 35px;
+        animation: ani1 0.75s ease-out 0.8s forwards;
+
+    }
+    .a2container p3{
+        opacity:0;
+        color:white;
+        animation: ani1 0.75s ease-out 1s forwards;
+    }
+    .a2container p4{
+        opacity:0;
+        color:white;
+        animation: ani1 0.75s ease-out 1.3s forwards;
+    }
+    .a2container p5{
+        opacity:0;
+        color:white;
+        animation: ani1 0.75s ease-out 1.6s forwards;
+    }
 }
 
 @keyframes ani1{
