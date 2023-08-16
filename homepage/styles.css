@@ -264,7 +264,7 @@
     }
     .post-ratings-container {
         opacity:1;
-        padding: 12px 20px;
+        width:20%;
         animation: ani1 0.75s ease-out 4.5s forwards;
     }
 }
