@@ -263,8 +263,8 @@
         font-family: 'sans-sariff';
     }
     .post-ratings-container {
-        padding: 2em;
-        opacity:1;
+        padding: 12em;
+        opacity:0;
         width:20%;
         animation: ani1 0.75s ease-out 4.5s forwards;
     }
