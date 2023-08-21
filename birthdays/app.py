@@ -35,5 +35,3 @@ def index():
     else:
         people = db.execute("SELECT * FROM birthdays")
         return render_template("index.html", people=people)
-
-
