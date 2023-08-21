@@ -16,7 +16,7 @@ db = SQL("sqlite:///birthdays.db")
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
-    
+
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
@@ -26,7 +26,7 @@ def after_request(response):
 def index():
     if request.method == "POST":
 
-        # TODO: Add the user's entry into the database
+        db.execute("INSERT INTO birthdays (name,month,day) VALUES(?,?,?)", name, month, day)
 
         return redirect("/")
 
