@@ -108,7 +108,7 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    passwords = db.execute("SELECT * FROM users")
+    passwords = db.execute("SELECT * FROM hash")
     if not username or password not in passwords or confirmation not in passwords:
         return apology("apology.html")
     db.execute("INSERT INTO users (username, password) VALUES (?,?)", username, password)
