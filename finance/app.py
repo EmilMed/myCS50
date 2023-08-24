@@ -108,8 +108,8 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    passwords = db.execute("INSERT INTO users (name, password) VALUES (?,?)", name, password)
-    if not name or password not in password or confirmation not in passwords:
+    passwords = db.execute("INSERT INTO users (username, password) VALUES (?,?)", username, password)
+    if not username or password not in password or confirmation not in passwords:
         return apology("apology.html")
     return render_template("layout.html")
 
