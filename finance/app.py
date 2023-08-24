@@ -108,7 +108,7 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if not name of password not in passwords:
+    if not name or password not in passwords:
         return apology("apology.html")
     return render_template("layout.html")
 
