@@ -111,7 +111,7 @@ def quote():
         quote = lookup(symbol.upper())
         if quote == None:
             return apology("Invalid Stock")
-        return render_template("quoted.html", name = name, price = stock["price"], symbol = stock["symbol"])
+        return render_template("quoted.html", name = quote["name"], price = quote["price"], symbol = quote["symbol"])
 
 
 @app.route("/register", methods=["GET", "POST"])
