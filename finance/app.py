@@ -105,6 +105,9 @@ def quote():
     if request.method == "GET":
         return render_template("quote.html")
     else:
+        symbol = request.form.get("symbol")
+        if not symbol:
+            return apology("Must input a symbol")
         
 
 
