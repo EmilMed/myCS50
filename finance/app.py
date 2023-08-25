@@ -115,9 +115,9 @@ def register():
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
         if not username or not password or not confirmation:
-            return apology("Sorry, fill in all the fields")
+            return apology("Fill in all the fields!")
         if password != confirmation:
-            return apology("Check your passwords")
+            return apology("Check your passwords!")
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
