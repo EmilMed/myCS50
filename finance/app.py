@@ -44,8 +44,11 @@ def buy():
     if request.method == "GET":
         return render_template("buy.html")
     else:
+        shares = request.form.get("shares")
+        symbol = request.form.get("symbol")
+        if not shares or not symbol:
+            return apology("Fill in all spaces!")
         
-
 
 @app.route("/history")
 @login_required
