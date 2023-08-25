@@ -120,10 +120,10 @@ def register():
             return apology("Check your passwords!")
         hash = generate_password_hash(password)
         try:
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+            user1 = db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
         except:
             return apology("Already in use")
-        session["user_id"] = rows[0]["id"]
+        session["user_id"] = user1
         return redirect("/")
 
 @app.route("/sell", methods=["GET", "POST"])
