@@ -110,6 +110,9 @@ def quote():
 def register():
     if request.method == "GET":
         return render_template("register.html")
+    else:
+        username = request.form.get("username")
+        password = 
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
