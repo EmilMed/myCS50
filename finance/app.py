@@ -108,7 +108,8 @@ def quote():
         symbol = request.form.get("symbol")
         if not symbol:
             return apology("Must input a symbol")
-        
+        stock = lookup(symbol.upper())
+        if stock 
 
 
 @app.route("/register", methods=["GET", "POST"])
