@@ -118,6 +118,11 @@ def register():
             return apology("Fill in all the fields!")
         if password != confirmation:
             return apology("Check your passwords!")
+        hash = generate_password_hash(password)
+        try:
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+        except:
+            return apology("Already in use")
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
