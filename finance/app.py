@@ -44,10 +44,15 @@ def buy():
     if request.method == "GET":
         return render_template("buy.html")
     else:
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
         symbol = request.form.get("symbol")
-        if not shares or not symbol:
-            return apology("Fill in all spaces!")
+        if not shares:
+            return apology("Must input number of shares")
+        quote = lookup(symbol.upper())
+        if quote == None:
+            return apology("Invalid Stock")
+        if shares < 0:
+            return apology("Shares has to be a positive number!")
         
 
 @app.route("/history")
