@@ -123,8 +123,10 @@ def register():
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
         except:
             return apology("Already in use")
-        
+
         session["user_id"] = rows[0]["id"]
+
+        return redirect("/")
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
