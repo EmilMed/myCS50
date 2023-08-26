@@ -177,9 +177,9 @@ def sell():
             return apology("Shares has to be a positive number!")
         total_cost = shares * quote["price"]
         user_id = session["user_id"]
-        cash_atm_db = db.execute("SELECT cash FROM users WHERE user_id = :id", id=user_id)
+        cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
         user_cash = cash_atm_db[0]["cash"]
-        total_shares = db.execute("SELECT shares from cashflow WHERE user_id = :id AND symbol = :symbol GROUP BY symbol", user_id, symbol)
+        total_shares = db.execute("SELECT shares from cashflow WHERE user_id=:id AND symbol = :symbol GROUP BY symbol", user_id, symbol)
         total_shares_atm = total_shares[0]["shares"]
         if shares > total_shares_atm:
             return apology("You don't own that any shares")
