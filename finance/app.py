@@ -35,7 +35,7 @@ def after_request(response):
 @login_required
 def index():
     user_id = session["user_id"]
-    cashflow_db = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM cashflow WHERE user_id = ?", user_id)
+    cashflow_db = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol", user_id)
     cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
     cash = cash_db[0]["cash"]
     return render_template("index.html", database = cashflow_db, cash = cash)
