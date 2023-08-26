@@ -56,6 +56,7 @@ def buy():
         total_cost = shares * quote["price"]
         user_id = session["user_id"]
         cash_atm = db.execute("SELECT cash FROM users WHERE id = :id", user_id)
+        return jsonify(cash_atm)
 
 @app.route("/history")
 @login_required
