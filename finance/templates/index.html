@@ -15,9 +15,9 @@
       <tbody>
         {% for row in database %}
             <tr>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td>{{ row["symbol"] }}</td>
+              <td>{{ row["shares"] }}</td>
+              <td>{{ row["price"] }}</td>
             </tr>
         {% endfor %}
       </tbody>
