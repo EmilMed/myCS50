@@ -170,9 +170,6 @@ def sell():
         symbol = request.form.get("symbol")
         if not shares:
             return apology("Must input number of shares")
-        quote = lookup(symbol.upper())
-        if quote == None:
-            return apology("Invalid Stock")
         if shares < 0:
             return apology("Shares has to be a positive number!")
         total_cost = shares * quote["price"]
