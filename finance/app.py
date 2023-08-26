@@ -59,7 +59,8 @@ def buy():
         user_cash = cash_atm[0]["cash"]
         if user_cash < total_cost:
             return apology("Not enough money")
-        
+        new_cash = user_cash - total_cost
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", user_id)
 
 @app.route("/history")
 @login_required
