@@ -180,11 +180,9 @@ def sell():
         user_id = session["user_id"]
         cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
         user_cash = cash_atm_db[0]["cash"]
-        if user_cash < total_cost:
-            return apology("Not enough money")
-        new_cash = user_cash - total_cost
+        new_cash = user_cash + total_cost
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
         date = datetime.datetime.now()
         db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], shares, quote["price"], date)
-        flash("Successfully purchased!")
+        flash("Successfully sold!")
         return redirect("/")
