@@ -161,4 +161,6 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    if request.method == "GET"
+    if request.method == "GET":
+        user_id = session["user_id"]
+        symbols = db.execute("SELECT symbol FROM cashflow WHERE user_id = :id GROUP BY symbol)
