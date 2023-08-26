@@ -56,7 +56,10 @@ def buy():
         total_cost = shares * quote["price"]
         user_id = session["user_id"]
         cash_atm = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-        return jsonify(cash_atm)
+        user_cash = cash_atm[0]["cash"]
+        if user_cash < total_cost:
+            return apology("Not enough money")
+        
 
 @app.route("/history")
 @login_required
