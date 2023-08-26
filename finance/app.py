@@ -55,6 +55,7 @@ def buy():
             return apology("Shares has to be a positive number!")
         total_cost = shares * quote["price"]
         user_id = session["user_id"]
+        cash_atm = db.execute("SELECT cash FROM users WHERE id = :id", user_id)
 
 @app.route("/history")
 @login_required
