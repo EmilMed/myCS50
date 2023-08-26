@@ -4,7 +4,7 @@ from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
-
+import datetime
 from helpers import apology, login_required, lookup, usd
 
 # Configure application
@@ -62,6 +62,7 @@ def buy():
         new_cash = user_cash - total_cost
         db.execute("UPDATE users SET cash = ? WHERE id = ?",new_cash, user_id)
         date = datetime.datetime.now()
+        db.execute("INSERT INTO )
 
 @app.route("/history")
 @login_required
