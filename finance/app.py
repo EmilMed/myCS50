@@ -60,7 +60,7 @@ def buy():
         if user_cash < total_cost:
             return apology("Not enough money")
         new_cash = user_cash - total_cost
-        db.execute("UPDATE users SET cash = ? WHERE id = ?",new_cash, user_id)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
         date = datetime.datetime.now()
         db.execute("INSERT INTO cash flow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], shares, quote["price"], date)
         flash("Successfully purchased!")
