@@ -60,7 +60,8 @@ def buy():
         if user_cash < total_cost:
             return apology("Not enough money")
         new_cash = user_cash - total_cost
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", user_id)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?",new_cash, user_id)
+        date = datetime.datetime.now()
 
 @app.route("/history")
 @login_required
