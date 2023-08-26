@@ -53,7 +53,8 @@ def buy():
             return apology("Invalid Stock")
         if shares < 0:
             return apology("Shares has to be a positive number!")
-        
+        total_cost = shares * quote["price"]
+        user_id = session["user_id"]
 
 @app.route("/history")
 @login_required
