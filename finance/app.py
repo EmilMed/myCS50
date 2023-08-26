@@ -53,6 +53,7 @@ def buy():
             return apology("Invalid Stock")
         if shares < 0:
             return apology("Shares has to be a positive number!")
+        
         total_cost = shares * quote["price"]
         user_id = session["user_id"]
         cash_atm = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
