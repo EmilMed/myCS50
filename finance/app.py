@@ -35,7 +35,7 @@ def after_request(response):
 @login_required
 def index():
     user_id = session["user_id"]
-    cashflow_db = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM cashflow WHERE)
+    cashflow_db = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM cashflow WHERE )
 
 
 @app.route("/buy", methods=["GET", "POST"])
