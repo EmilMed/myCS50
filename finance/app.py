@@ -165,3 +165,26 @@ def sell():
         user_id = session["user_id"]
         symbols_user = db.execute("SELECT symbol FROM cashflow WHERE user_id = :id GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
         return render_template("sell.html", symbols = [row["symbol"] for row in symbols_user])
+    else:
+        shares = int(request.form.get("shares"))
+        symbol = request.form.get("symbol")
+        if not shares:
+            return apology("Must input number of shares")
+        quote = lookup(symbol.upper())
+        if quote == None:
+            return apology("Invalid Stock")
+        if shares < 0:
+            return apology("Shares has to be a positive number!")
+
+        total_cost = shares * quote["price"]
+        user_id = session["user_id"]
+        cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
+        user_cash = cash_atm_db[0]["cash"]
+        if user_cash < total_cost:
+            return apology("Not enough money")
+        new_cash = user_cash - total_cost
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
+        date = datetime.datetime.now()
+        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], shares, quote["price"], date)
+        flash("Successfully purchased!")
+        return redirect("/")
