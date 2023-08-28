@@ -50,13 +50,13 @@ def buy():
     if request.method == "GET":
         return render_template("buy.html")
     else:
-        shares = request.form.get("shares")
+        shares = int(request.form.get("shares"))
         symbol = request.form.get("symbol").upper()
         quote = lookup(symbol.upper())
         if quote == None:
             return apology("Invalid Stock")
-        if int(shares) < 0 or not shares.isdigit() or not shares:
-            return apology("Shares has to be a positive number!")
+        elif shares <= 0 or not shares:
+            return apology("Shares has to be a whole positive number!")
 
         total_cost = int(shares) * quote["price"]
         user_id = session["user_id"]
