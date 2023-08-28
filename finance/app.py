@@ -76,9 +76,9 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
-    """Show history of transactions"""
-    return apology("TODO")
-
+    user_id = session["user_id"]
+    cashflow_db = db.execute("SELECT * FROM cashflow WHERE user_id =:id", id=user_id)
+    return render_template("history.html", cashflow = cashflow.db)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -189,7 +189,7 @@ def sell():
         total_shares_atm = total_shares[0]["shares"]
         if shares > total_shares_atm:
             return apology("You don't own that many shares")
-        
+
         new_cash = user_cash + total_cost
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
         date = datetime.datetime.now()
