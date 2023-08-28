@@ -41,7 +41,7 @@ def index():
     for stock in cashflow_db:
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
-        stcok["price"] = quote["price"]
+        stock["price"] = quote["price"]
     return render_template("index.html", cashflow_db=cashflow_db, cash = cash)
 
 @app.route("/buy", methods=["GET", "POST"])
