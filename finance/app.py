@@ -42,7 +42,7 @@ def index():
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
         stock["price"] = usd(quote["price"])
-    return render_template("index.html", stocks=stocks, cash=cash)
+    return render_template("index.html", stocks=stocks, cash=usd(cash))
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
@@ -136,7 +136,7 @@ def quote():
         quote = lookup(symbol.upper())
         if not quote:
             return apology("Invalid Stock")
-        return render_template("quoted.html", name=quote["name"], price=quote["price"], symbol=quote["symbol"])
+        return render_template("quoted.html", name=quote["name"], price=usd(quote["price"]), symbol=quote["symbol"])
 
 
 @app.route("/register", methods=["GET", "POST"])
