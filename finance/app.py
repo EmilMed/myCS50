@@ -55,8 +55,8 @@ def buy():
         quote = lookup(symbol.upper())
         if quote == None:
             return apology("Invalid Stock")
-        elif shares <= 0 or not shares:
-            return apology("Shares has to be a whole positive number!")
+        if shares <= 0:
+            return apology("Shares must be a positive number")
 
         total_cost = int(shares) * quote["price"]
         user_id = session["user_id"]
