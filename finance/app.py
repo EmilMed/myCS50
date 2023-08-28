@@ -190,7 +190,7 @@ def sell():
         new_cash = user_cash + total_cost
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
         date = datetime.datetime.now()
-        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, quote["price"], date)
+        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, usd(quote["price"]), date)
         flash("Successfully sold!")
         return redirect("/")
 
