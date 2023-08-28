@@ -80,22 +80,7 @@ def history():
     cashflow_db = db.execute("SELECT * FROM cashflow WHERE user_id =:id", id=user_id)
     return render_template("history.html", cashflow = cashflow_db)
 
-@app.route("/top_up_balance", methods=["GET", "POST"])
-@login_required
-def top_up_balance():
-    if request.method == "GET":
-        return render_template("topup.html")
-    else:
-        topup_cash = int(request.form.get("topup_cash"))
-        if not topup_cash:
-            return apology("Must input a number")
-        user_id = session["user_id"]
-        cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-        user_cash = cash_atm_db[0]["cash"]
-        new_cash = user_cash + topup_cash
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
-        return redirect("/")
-    
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
@@ -211,4 +196,20 @@ def sell():
         date = datetime.datetime.now()
         db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, quote["price"], date)
         flash("Successfully sold!")
+        return redirect("/")
+
+@app.route("/top_up_balance", methods=["GET", "POST"])
+@login_required
+def top_up_balance():
+    if request.method == "GET":
+        return render_template("topup.html")
+    else:
+        topup_cash = int(request.form.get("topup_cash"))
+        if not topup_cash:
+            return apology("Must input a number")
+        user_id = session["user_id"]
+        cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
+        user_cash = cash_atm_db[0]["cash"]
+        new_cash = user_cash + topup_cash
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
         return redirect("/")
