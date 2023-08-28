@@ -204,7 +204,7 @@ def top_up_balance():
     if request.method == "GET":
         return render_template("topup.html")
     else:
-        topup_cash = request.form.get("topup_cash")
+        topup_cash = int(request.form.get("topup_cash"))
         if not topup_cash:
             return apology("Must input a number")
         user_id = session["user_id"]
@@ -212,4 +212,5 @@ def top_up_balance():
         user_cash = cash_atm_db[0]["cash"]
         new_cash = user_cash + topup_cash
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
+        flash("Successfully added!")
         return redirect("/")
