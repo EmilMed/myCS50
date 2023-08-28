@@ -37,7 +37,7 @@ def index():
     user_id = session["user_id"]
     stocks = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol HAVING shares > 0", user_id)
     cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
-    cash = cash_db[0]["cash"]
+    cash = usd(cash_db[0]["cash"])
     for stock in stocks:
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
@@ -52,9 +52,9 @@ def buy():
     else:
         shares = request.form.get("shares")
         symbol = request.form.get("symbol").upper()
-        quote = lookup(symbol)
+        quote = lookup(symbol.upper())
         if quote == None:
-            return apology("Invalid Symbol")
+            return apology("Invalid Stock")
         if not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("Shares must be a whole positive number")
 
@@ -190,7 +190,7 @@ def sell():
         new_cash = user_cash + total_cost
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
         date = datetime.datetime.now()
-        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, usd(quote["price"]), date)
+        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, quote["price"], date)
         flash("Successfully sold!")
         return redirect("/")
 
