@@ -196,3 +196,9 @@ def sell():
         db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, quote["price"], date)
         flash("Successfully sold!")
         return redirect("/")
+
+@app.route("/top_up_the_balance", methods=["GET", "POST"])
+@login_required
+def topup():
+    if request.method == "GET":
+        return render_template("topup.html")
