@@ -41,7 +41,7 @@ def index():
     for stock in stocks:
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
-        stock["price"] = quote["price"]
+        stock["price"] = round(float(quote["price"]), 2)
     return render_template("index.html", stocks=stocks, cash=cash)
 
 @app.route("/buy", methods=["GET", "POST"])
