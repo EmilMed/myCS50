@@ -61,7 +61,7 @@ def buy():
         total_cost = int(shares) * quote["price"]
         user_id = session["user_id"]
         cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-        user_cash = cash_atm_db[0]["cash"]
+        user_cash = usd(cash_atm_db[0]["cash"])
         if user_cash < total_cost:
             return apology("Not enough money")
         new_cash = user_cash - total_cost
