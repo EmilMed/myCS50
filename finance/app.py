@@ -199,7 +199,7 @@ def sell():
 
 @app.route("/top_up_balance", methods=["GET", "POST"])
 @login_required
-def topup():
+def top_up_balance():
     if request.method == "GET":
         return render_template("topup.html")
     else:
