@@ -14,11 +14,11 @@
         </tr>
       </thead>
       <tbody>
-        {% for row in database %}
+        {% for stock in cashflow_db %}
             <tr>
-              <td>{{ row["symbol"] }}</td>
-              <td>{{ row["shares"] }}</td>
-              <td>{{ row["price"] }}</td>
+              <td>{{ stock["symbol"] }}</td>
+              <td>{{ stock["shares"] }}</td>
+              <td>{{ stock["price"] }}</td>
             </tr>
         {% endfor %}
       </tbody>
