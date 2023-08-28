@@ -78,7 +78,7 @@ def buy():
 def history():
     user_id = session["user_id"]
     cashflow_db = db.execute("SELECT * FROM cashflow WHERE user_id =:id", id=user_id)
-    return render_template("history.html", cashflow = cashflow.db)
+    return render_template("history.html", cashflow = cashflow_db)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
