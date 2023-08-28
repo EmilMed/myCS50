@@ -35,14 +35,14 @@ def after_request(response):
 @login_required
 def index():
     user_id = session["user_id"]
-    cashflow_db = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol HAVING shares > 0", user_id)
+    stocks = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol HAVING shares > 0", user_id)
     cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
     cash = round(float(cash_db[0]["cash"]), 2)
-    for stock in cashflow_db:
+    for stock in stocks:
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
         stock["price"] = quote["price"]
-    return render_template("index.html", cashflow_db=cashflow_db, cash = cash)
+    return render_template("index.html", stocks=stocks, cash=cash)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
