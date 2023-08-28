@@ -197,13 +197,18 @@ def sell():
         flash("Successfully sold!")
         return redirect("/")
 
-@app.route("/top_up_the_balance", methods=["GET", "POST"])
+@app.route("/top_up_balance", methods=["GET", "POST"])
 @login_required
 def topup():
     if request.method == "GET":
         return render_template("topup.html")
     else:
-        topup_cash = request.form.get("topup_cash")
+        topup_cash = int(request.form.get("topup_cash"))
         if not topup_cash:
             return apology("Must input a number")
         user_id = session["user_id"]
+        cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
+        user_cash = cash_atm_db[0]["cash"]
+        new_cash = user_cash + topup_cash
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
+        return redirect("/")
