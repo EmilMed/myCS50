@@ -52,9 +52,9 @@ def buy():
     else:
         shares = request.form.get("shares")
         symbol = request.form.get("symbol").upper()
-        quote = lookup(symbol.upper())
+        quote = lookup(symbol)
         if quote == None:
-            return apology("Invalid Stock")
+            return apology("Invalid Symbol")
         if not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("Shares must be a whole positive number")
 
