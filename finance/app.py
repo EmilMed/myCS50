@@ -204,7 +204,7 @@ def top_up_balance():
     if request.method == "GET":
         return render_template("topup.html")
     else:
-        topup_cash = request.form.get("topup_cash")
+        topup_cash = int(request.form.get("topup_cash"))
         if not topup_cash:
             return apology("Must input a number")
         user_id = session["user_id"]
