@@ -67,7 +67,7 @@ def buy():
         new_cash = user_cash - total_cost
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
         date = datetime.datetime.now()
-        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], shares, quote["price"], date)
+        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], shares, usd(quote["price"]), date)
         flash("Successfully purchased!")
         return redirect("/")
 
@@ -136,7 +136,7 @@ def quote():
         quote = lookup(symbol.upper())
         if not quote:
             return apology("Invalid Stock")
-        return render_template("quoted.html", name=quote["name"], price=usd(quote["price"]), symbol=quote["symbol"])
+        return render_template("quoted.html", name=quote["name"], price=quote["price"], symbol=quote["symbol"])
 
 
 @app.route("/register", methods=["GET", "POST"])
