@@ -57,7 +57,7 @@ def buy():
         quote = lookup(symbol.upper())
         if quote == None:
             return apology("Invalid Stock")
-        if shares < 0:
+        if int(shares) < 0 or not shares.isdigit() or not shares:
             return apology("Shares has to be a positive number!")
 
         total_cost = shares * quote["price"]
