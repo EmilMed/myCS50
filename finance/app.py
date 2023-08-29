@@ -43,7 +43,8 @@ def index():
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
         stock["price"] = usd(quote["price"])
-        stock["value"] = usd(int(quote["price"]) * stock["total_shares"])
+        stock["value"] = int(quote["price"]) * stock["total_shares"]
+        stock["valueusd"] = usd(int(quote["price"]) * stock["total_shares"])
         total_value += stock["value"]
     return render_template("index.html", stocks=stocks, cash=cash, total_value = total_value)
 
