@@ -37,11 +37,11 @@ def index():
     user_id = session["user_id"]
     stocks = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol HAVING shares > 0", user_id)
     cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
-    cash = usd(cash_db[0]["cash"])
+    cash = cash_db[0]["cash"]
     for stock in stocks:
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
-        stock["price"] = usd(quote["price"])
+        stock["price"] = quote["price"]
     return render_template("index.html", stocks=stocks, cash=cash)
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -136,7 +136,7 @@ def quote():
         quote = lookup(symbol.upper())
         if not quote:
             return apology("Invalid Stock")
-        return render_template("quoted.html", name=quote["name"], price=usd(quote["price"]), symbol=quote["symbol"])
+        return render_template("quoted.html", name=quote["name"], price=quote["price"], symbol=quote["symbol"])
 
 
 @app.route("/register", methods=["GET", "POST"])
