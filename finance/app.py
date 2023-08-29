@@ -69,7 +69,7 @@ def buy():
         date = datetime.datetime.now()
         db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], shares, quote["price"], date)
         flash("Successfully purchased!")
-        return redirect("/")
+        return render_template("/bought.html", name=quote["name"], price=usd(quote["price"]), symbol=quote["symbol"])
 
 @app.route("/history")
 @login_required
