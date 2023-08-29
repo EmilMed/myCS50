@@ -35,7 +35,7 @@ def after_request(response):
 @login_required
 def index():
     user_id = session["user_id"]
-    stocks = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol HAVING shares > 0", user_id)
+    stocks = db.execute("SELECT symbol, SUM(shares) AS total_shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0", user_id)
     cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
     cash = usd(cash_db[0]["cash"])
     total_value = cash
@@ -43,7 +43,7 @@ def index():
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
         stock["price"] = usd(quote["price"])
-        stock["value"] = stock["price"] * stock["shares"]
+        stock["value"] = stock["price"] * stock["total_shares"]
         total_value += stock["value"]
     return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value)
 
