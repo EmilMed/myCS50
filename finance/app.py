@@ -41,8 +41,8 @@ def index():
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
         stock["price"] = usd(quote["price"])
-        stock["value"] = int(quote["price"]) * stock["total_shares"]
-        stock["valueusd"] = usd(int(quote["price"]) * stock["total_shares"])
+        stock["value"] = float(quote["price"]) * stock["total_shares"]
+        stock["valueusd"] = usd(float(quote["price"]) * stock["total_shares"])
         total_value += stock["value"]
     grand_total = usd(total_value)
     return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total)
