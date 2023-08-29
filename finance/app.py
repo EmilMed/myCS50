@@ -38,13 +38,14 @@ def index():
     stocks = db.execute("SELECT symbol, SUM(shares) AS shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol HAVING shares > 0", user_id)
     cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
     cash = usd(cash_db[0]["cash"])
+    total_value = cash
     for stock in stocks:
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
         stock["price"] = usd(quote["price"])
         stock["value"] = stock["price"] * stock["shares"]
-        total_value = stock["value"]
-    return render_template("index.html", stocks=stocks, cash=cash, total_value = usd(total_value))
+        total_value += stock["value"]
+    return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
