@@ -186,7 +186,7 @@ def sell():
 
         total_shares = db.execute("SELECT shares from cashflow WHERE user_id=:id AND symbol = :symbol GROUP BY symbol", id=user_id, symbol=symbol)
         total_shares_atm = total_shares[0]["shares"]
-        if shares > total_shares_atm:
+        if int(shares) > total_shares_atm:
             return apology("You don't own that many shares")
 
         new_cash = user_cash + total_cost
