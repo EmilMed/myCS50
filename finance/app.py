@@ -176,7 +176,7 @@ def sell():
         quote = lookup(symbol.upper())
         if quote == None:
             return apology("Invalid Stock")
-        if shares < 0:
+        if :
             return apology("Shares has to be a positive number!")
 
         total_cost = shares * quote["price"]
