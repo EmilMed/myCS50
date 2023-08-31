@@ -55,28 +55,57 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    if request.method == "GET":
-        return render_template("buy.html")
-    else:
-        shares = request.form.get("shares")
+        """Buy shares of stock"""
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+
+        # Ensure stock was submitted
+        if not request.form.get("symbol"):
+            return apology("must provide symbol")
+
+        # Ensure shares was submitted
+        elif not request.form.get("shares"):
+            return apology("must provide shares")
+
+        # Ensure shares is greater than 0
+        elif int(request.form.get("shares")) < 0:
+            return apology("must provide a valid number of shares")
+
+        # Ensure shock exists
+        if not request.form.get("symbol"):
+            return apology("must provide an existing symbol")
+
+        # Lookup function
         symbol = request.form.get("symbol").upper()
-        quote = lookup(symbol.upper())
-        if quote == None:
-            return apology("Invalid symbol")
-        if not shares or not shares.isdigit() or int(shares) <= 0:
-            return apology("Shares must be a whole positive number")
-        total_cost = int(shares) * quote["price"]
-        user_id = session["user_id"]
-        cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-        user_cash = cash_atm_db[0]["cash"]
-        if user_cash < total_cost:
-            return apology("Not enough money")
-        new_cash = user_cash - total_cost
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
-        date = datetime.datetime.now()
-        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], shares, quote["price"], date)
-        flash("Successfully purchased!")
-        return render_template("/bought.html", name=quote["name"], price=usd(quote["price"]), symbol=quote["symbol"])
+        stock = lookup(symbol)
+        if stock is None:
+            return apology("symbol does not exist")
+
+        # Value of transaction
+        shares = int(request.form.get("shares"))
+        transactionb = shares * stock['price']
+
+        # Check if user has enough cash for transaction
+        user_cash = db.execute("SELECT cash FROM users WHERE id=:id", id=session["user_id"])
+        cash = user_cash[0]["cash"]
+
+        # Subtract user_cash by value of transaction
+        updt_cash = cash - transactionb
+
+        if updt_cash < 0:
+            return apology("you do not have enough cash")
+
+        # Update how much left in his account (cash) after the transaction
+        db.execute("UPDATE users SET cash=:updt_cash WHERE id=:id", updt_cash=updt_cash, id=session["user_id"]);
+        # Update de transactions table
+        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)", user_id=session["user_id"], symbol=stock['symbol'], shares=shares, price=stock['price'])
+        flash("Bought!")
+        return redirect("/")
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    else:
+        return render_template("buy.html")
 
 @app.route("/history")
 @login_required
