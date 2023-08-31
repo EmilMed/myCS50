@@ -51,7 +51,29 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-
+    if request.method == "GET":
+        return render_template("buy.html")
+    else:
+        shares = request.form.get("shares")
+        symbol = request.form.get("symbol").upper()
+        quote = lookup(symbol.upper())
+        if quote == None:
+            return apology("Invalid symbol")
+        if not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("Shares must be a whole positive number")
+        total_cost = int(shares) * quote["price"]
+        user_id = session["user_id"]
+        cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
+        user_cash = cash_atm_db[0]["cash"]
+        if user_cash < total_cost:
+            return apology("Not enough money")
+        new_cash = user_cash - total_cost
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
+        date = datetime.datetime.now()
+        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], shares, quote["price"], date)
+        flash("Successfully purchased!")
+        return render_template("/bought.html", name=quote["name"], price=usd(quote["price"]), symbol=quote["symbol"])
+    
 @app.route("/history")
 @login_required
 def history():
