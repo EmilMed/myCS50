@@ -189,15 +189,7 @@ def sell():
                        return apology("Invalid symbol")
                     total_cost = shares * quote["price"]
                     user_id = session["user_id"]
-                    cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-                    user_cash = cash_atm_db[0]["cash"]
-
-        total_shares = db.execute("SELECT shares from cashflow WHERE user_id=:id AND symbol = :symbol GROUP BY symbol", id=user_id, symbol=symbol)
-        total_shares_atm = total_shares[0]["shares"]
-        if shares > total_shares_atm:
-            return apology("You don't own that many shares")
-
-        new_cash = user_cash + total_cost
+                    new_cash = total_cost + 
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
         date = datetime.datetime.now()
         db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, quote["price"], date)
