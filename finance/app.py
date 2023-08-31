@@ -58,9 +58,10 @@ def buy():
         symbol = request.form.get("symbol").upper()
         quote = lookup(symbol.upper())
         if quote == None:
-            return apology("Invalid Stock")
+            return apology("Invalid symbol")
         if not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("Shares must be a whole positive number")
+        
         total_cost = int(shares) * quote["price"]
         user_id = session["user_id"]
         cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
