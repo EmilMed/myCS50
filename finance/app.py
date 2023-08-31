@@ -173,8 +173,12 @@ def sell():
     else:
         shares = request.form.get("shares")
         symbol = request.form.get("symbol")
-        if not shares:
-            return apology("Must input number of shares")
+        if not symbol:
+            return apology("Must input a symbol")
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("Shares must be a whole positive number")
+        else:
+            shares = int(shares)
         quote = lookup(symbol.upper())
         if quote == None:
             return apology("Invalid Stock")
