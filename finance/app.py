@@ -34,7 +34,7 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     # Create a table for index
-    rows = db.execute("SELECT symbol, SUM(shares) FROM transactions WHERE user_id=:user_id GROUP BY symbol HAVING SUM(shares) > 0", user_id=session["user_id"])
+    rows = db.execute("SELECT symbol, SUM(shares) FROM cashflow WHERE user_id=:user_id GROUP BY symbol HAVING SUM(shares) > 0", user_id=session["user_id"])
 
     # Creates a place to save the informations
     holdings = []
