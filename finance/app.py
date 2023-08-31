@@ -189,11 +189,13 @@ def sell():
                        return apology("Invalid symbol")
                     total_cost = shares * quote["price"]
                     user_id = session["user_id"]
-                    new_cash = total_cost + 
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
-        date = datetime.datetime.now()
-        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, quote["price"], date)
-        flash("Successfully sold!")
+                    cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
+                    user_cash = cash_atm_db[0]["cash"]
+                    new_cash = total_cost + user_cash
+                    db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
+                    date = datetime.datetime.now()
+                    db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, quote["price"], date)
+                    flash("Successfully sold!")
         return redirect("/")
     else:
         return render_template("sell.html", symbols_user=symbols_user)
