@@ -32,80 +32,25 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    """Show portfolio of stocks"""
-    # Create a table for index
-    rows = db.execute("SELECT symbol, SUM(shares) FROM cashflow WHERE user_id=:user_id GROUP BY symbol HAVING SUM(shares) > 0", user_id=session["user_id"])
-
-    # Creates a place to save the informations
-    holdings = []
-    all_total = 0
-
-    for row in rows:
-        stock = lookup(row['symbol'])
-        sum_value = (stock["price"] * row["SUM(shares)"])
-        holdings.append({"symbol": stock["symbol"], "name": stock["name"], "shares": row["SUM(shares)"], "price": usd(stock["price"]), "total": usd(sum_value)})
-        all_total += stock["price"] * row["SUM(shares)"]
-
-    rows = db.execute("SELECT cash FROM users WHERE id=:user_id", user_id=session["user_id"])
-    cash = rows[0]["cash"]
-    all_total += cash
-
-    return render_template("index.html", holdings=holdings, cash=usd(cash), all_total=usd(all_total))
+    user_id = session["user_id"]
+    stocks = db.execute("SELECT symbol, SUM(shares) AS total_shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0", user_id)
+    cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+    cash = cash_db[0]["cash"]
+    total_value = cash
+    grand_total = cash
+    for stock in stocks:
+        quote = lookup(stock["symbol"])
+        stock["name"] = quote["name"]
+        stock["price"] = quote["price"]
+        stock["value"] = stock["price"] * stock["total_shares"]
+        total_value += stock["value"]
+        grand_total += stock["value"]
+        stock["valueusd"] = usd(stock["value"])
+    return render_template("index.html", stocks=stocks, cash=cash, total=usd(total_value), grand=usd(grand_total))
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-        """Buy shares of stock"""
-
-    # User reached route via POST (as by submitting a form via POST)
-    if request.method == "POST":
-
-        # Ensure stock was submitted
-        if not request.form.get("symbol"):
-            return apology("must provide symbol")
-
-        # Ensure shares was submitted
-        elif not request.form.get("shares"):
-            return apology("must provide shares")
-
-        # Ensure shares is greater than 0
-        elif int(request.form.get("shares")) < 0:
-            return apology("must provide a valid number of shares")
-
-        # Ensure shock exists
-        if not request.form.get("symbol"):
-            return apology("must provide an existing symbol")
-
-        # Lookup function
-        symbol = request.form.get("symbol").upper()
-        stock = lookup(symbol)
-        if stock is None:
-            return apology("symbol does not exist")
-
-        # Value of transaction
-        shares = int(request.form.get("shares"))
-        transactionb = shares * stock['price']
-
-        # Check if user has enough cash for transaction
-        user_cash = db.execute("SELECT cash FROM users WHERE id=:id", id=session["user_id"])
-        cash = user_cash[0]["cash"]
-
-        # Subtract user_cash by value of transaction
-        updt_cash = cash - transactionb
-
-        if updt_cash < 0:
-            return apology("you do not have enough cash")
-
-        # Update how much left in his account (cash) after the transaction
-        db.execute("UPDATE users SET cash=:updt_cash WHERE id=:id", updt_cash=updt_cash, id=session["user_id"]);
-        # Update de transactions table
-        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)", user_id=session["user_id"], symbol=stock['symbol'], shares=shares, price=stock['price'])
-        flash("Bought!")
-        return redirect("/")
-
-    # User reached route via GET (as by clicking a link or via redirect)
-    else:
-        return render_template("buy.html")
 
 @app.route("/history")
 @login_required
