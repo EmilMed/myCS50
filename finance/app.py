@@ -166,10 +166,8 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-
     user_id = session["user_id"]
     symbols_user = db.execute("SELECT symbol FROM cashflow WHERE user_id = :id GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
-
 
     if request.method == "POST":
         shares = request.form.get("shares")
@@ -180,7 +178,9 @@ def sell():
             return apology("Shares must be a whole positive number")
         else:
             shares = int(shares)
-        quote = lookup(symbol.upper())
+
+        for row in symbols_user:
+            if row["symbol"]
         if quote == None:
             return apology("Invalid Stock")
         if shares < 0:
@@ -202,6 +202,8 @@ def sell():
         db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, quote["price"], date)
         flash("Successfully sold!")
         return redirect("/")
+    else:
+        return render_template("sell.html", symbols_user=symbols_user)
 
 @app.route("/top_up_balance", methods=["GET", "POST"])
 @login_required
