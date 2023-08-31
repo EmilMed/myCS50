@@ -9,8 +9,8 @@
         <h1>Sell</h1>
         <div class="mb-3">
             <select name="symbol">
-                {% for symbol in symbols %}
-                    <option value="{{ symbol }}">{{ symbol }}</option>
+                {% for row in symbols %}
+                    <option value="{{ row.symbol }}">{{ row.symbol }}</option>
                 {% endfor %}
             </select>
         </div>
