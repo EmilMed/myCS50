@@ -167,7 +167,7 @@ def register():
 @login_required
 def sell():
     user_id = session["user_id"]
-    symbols_user = db.execute("SELECT symbol, SUM(shares) AS total_shares FROM cashflow WHERE user_id = :id GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
+    stocks = db.execute("SELECT symbol, SUM(shares) AS total_shares FROM cashflow WHERE user_id = :id GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
 
     if request.method == "POST":
         shares = request.form.get("shares")
@@ -179,9 +179,9 @@ def sell():
         else:
             shares = int(shares)
 
-        for row in symbols_user:
-            if row["symbol"] == symbol:
-                if row["total_shares"] < shares:
+        for stock in stocks:
+            if stock["symbol"] == symbol:
+                if stock["total_shares"] < shares:
                     return apology("Not enough shares")
                 else:
                     quote = lookup(symbol.upper())
