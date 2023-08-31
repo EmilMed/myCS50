@@ -61,7 +61,6 @@ def buy():
             return apology("Invalid symbol")
         if not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("Shares must be a whole positive number")
-
         total_cost = int(shares) * quote["price"]
         user_id = session["user_id"]
         cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
@@ -166,39 +165,37 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    user_id = session["user_id"]
-    stocks = db.execute("SELECT symbol, SUM(shares) AS total_shares FROM cashflow WHERE user_id = :id GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
-
-    if request.method == "POST":
-        shares = request.form.get("shares")
-        symbol = request.form.get("symbol")
-        if not symbol:
-            return apology("Must input a symbol")
-        elif not shares or not shares.isdigit() or int(shares) <= 0:
-            return apology("Shares must be a whole positive number")
-        else:
-            shares = int(shares)
-
-        for stock in stocks:
-            if stock["symbol"] == symbol:
-                if stock["total_shares"] < shares:
-                    return apology("Not enough shares")
-                else:
-                    quote = lookup(symbol.upper())
-                    if quote == None:
-                       return apology("Invalid symbol")
-                    total_cost = shares * quote["price"]
-                    user_id = session["user_id"]
-                    cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
-                    user_cash = cash_atm_db[0]["cash"]
-                    new_cash = total_cost + user_cash
-                    db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
-                    date = datetime.datetime.now()
-                    db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, quote["price"], date)
-                    flash("Successfully sold!")
-        return redirect("/")
+    if request.method == "GET":
+        user_id = session["user_id"]
+        symbols_user = db.execute("SELECT symbol FROM cashflow WHERE user_id = :id GROUP BY symbol HAVING SUM(shares) > 0", id=user_id)
+        return render_template("sell.html", symbols = [row["symbol"] for row in symbols_user])
     else:
-        return render_template("sell.html", symbols_user=symbols_user)
+        shares = int(request.form.get("shares"))
+        symbol = request.form.get("symbol")
+        if not shares:
+            return apology("Must input number of shares")
+        quote = lookup(symbol.upper())
+        if quote == None:
+            return apology("Invalid Stock")
+        if shares < 0:
+            return apology("Shares has to be a positive number!")
+
+        total_cost = shares * quote["price"]
+        user_id = session["user_id"]
+        cash_atm_db = db.execute("SELECT cash FROM users WHERE id = :id", id=user_id)
+        user_cash = cash_atm_db[0]["cash"]
+
+        total_shares = db.execute("SELECT shares from cashflow WHERE user_id=:id AND symbol = :symbol GROUP BY symbol", id=user_id, symbol=symbol)
+        total_shares_atm = total_shares[0]["shares"]
+        if shares > total_shares_atm:
+            return apology("You don't own that many shares")
+
+        new_cash = user_cash + total_cost
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", new_cash, user_id)
+        date = datetime.datetime.now()
+        db.execute("INSERT INTO cashflow (user_id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", user_id, quote["symbol"], (-1) * shares, quote["price"], date)
+        flash("Successfully sold!")
+        return redirect("/")
 
 @app.route("/top_up_balance", methods=["GET", "POST"])
 @login_required
