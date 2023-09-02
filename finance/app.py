@@ -36,8 +36,8 @@ def index():
     stocks = db.execute("SELECT symbol, SUM(shares) AS total_shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0", user_id)
     cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
     cash = cash_db[0]["cash"]
-    total_value = cash
-    grand_total = cash
+    total_value = float(cash)
+    grand_total = float(cash)
     for stock in stocks:
         quote = lookup(stock["symbol"])
         stock["name"] = quote["name"]
@@ -46,7 +46,7 @@ def index():
         total_value += stock["value"]
         grand_total += stock["value"]
         stock["valueusd"] = usd(stock["value"])
-    return render_template("index.html", stocks=stocks, cash=cash, total=float(total_value), grand=grand_total)
+    return render_template("index.html", stocks=stocks, cash=cash, total=usd(total_value), grand=usd(grand_total))
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
