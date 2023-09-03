@@ -44,8 +44,8 @@ def index():
         stock["value"] = stock["price"] * stock["total_shares"]
         total_value += stock["value"]
         grand_total += stock["value"]
-        stock["valueusd"] = stock["value"]
-    return render_template("index.html", stocks=stocks, cash=cash, total=total_value, grand=usd(grand_total))
+        stock["valueusd"] = usd(stock["value"])
+    return render_template("index.html", stocks=stocks, cash=cash, total=usd(total_value), grand=usd(grand_total))
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
