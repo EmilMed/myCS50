@@ -19,7 +19,7 @@
               <td>{{ stock.symbol }}</td>
               <td>{{ stock.total_shares }}</td>
               <td>{{ stock.price | usd }}</td>
-              <td>{{ stock.valueusd }}</td>
+              <td>{{ stock.valueusd | usd}}</td>
             </tr>
         {% endfor %}
       </tbody>
@@ -34,7 +34,7 @@
           <td></td>
           <td></td>
           <th scope = "1">Total:</th>
-          <th scope = "1">{{ total }}</th>
+          <th scope = "1">{{ total | usd }}</th>
         </tr>
       </tfoot>
     </table>
