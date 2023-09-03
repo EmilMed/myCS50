@@ -34,8 +34,7 @@ def after_request(response):
 def index():
     user_id = session["user_id"]
     stocks = db.execute("SELECT symbol, SUM(shares) AS total_shares, price FROM cashflow WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0", user_id)
-    cash_db = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
-    cash = cash_db[0]["cash"]
+    cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
     total_value = float(cash)
     grand_total = float(cash)
     for stock in stocks:
