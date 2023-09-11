@@ -103,3 +103,14 @@ nav ul li a:hover::after{
     width: 110%;
     border-radius: 15px;
 }
+
+.about-col-2 {
+    flex-basis: 30%;
+}
+
+.sub-title{
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #fff;
+}
