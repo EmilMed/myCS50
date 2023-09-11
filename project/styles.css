@@ -83,3 +83,23 @@ nav ul li a:hover::after{
         opacity: 1;
     }
 }
+
+#about{
+    padding: 200px 0;
+    color: #ababab;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 45%;
+}
+
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
