@@ -16,11 +16,10 @@ body{
     background-image: url(https://wallpapercave.com/wp/wp9484917.jpg);
     background-size: cover;
     background-position: center;
-    overflow-y: hidden;
 }
 
 .container{
-    padding: 70px 5%;
+    padding: 20px 5%;
 }
 
 nav{
@@ -31,6 +30,8 @@ nav{
 }
 
 .logo{
+
+    padding: 10px;
     width: 120px
 }
 
