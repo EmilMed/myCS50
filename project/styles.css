@@ -42,18 +42,22 @@ nav ul li{
 nav ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     position: relative;
 }
 
 nav ul li a::after{
-    content = '';
-    width = 100%;
+    content: '';
+    width: 0;
     height: 3px;
     background: #fff;
     position: absolute;
     left: 0;
     bottom: -6px;
     transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
 }
 
