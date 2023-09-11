@@ -107,10 +107,16 @@ nav ul li a:hover::after{
 .about-col-2 {
     flex-basis: 45%;
 }
-
 .sub-title{
     font-family: sans-serif;
     font-size: 40px;
     font-weight: 600;
     color: #fff;
+    margin-bottom: 40px;
+}
+.about-col-2 p{
+    font-size: 24px;
+    color: #fff;
+    font-family: sans-serif;
+    margin-between: 30px;
 }
