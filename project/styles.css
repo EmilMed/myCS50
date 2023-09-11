@@ -114,3 +114,6 @@ nav ul li a:hover::after{
     font-weight: 600;
     color: #fff;
 }
+.about-col-2 p{
+    text-align: center;
+}
