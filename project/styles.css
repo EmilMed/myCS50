@@ -19,5 +19,16 @@ body{
 }
 
 .container{
-    padding: 70px 10%;
+    padding: 70px 5%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 120px
 }
