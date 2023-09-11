@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: times, monospace;
+    font-family: "Verdana";
     box-sizing: border-box;
 }
 
@@ -55,7 +55,7 @@ nav ul li a::after{
     position: absolute;
     left: 0;
     bottom: -6px;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 nav ul li a:hover::after{
