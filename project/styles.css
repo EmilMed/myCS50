@@ -68,7 +68,7 @@ nav ul li a:hover::after{
     padding: 30% 2%;
     font-size: 70px;
     font-family: sans-serif;
-    animation: ani1 0.3s ease-out 0.5s forwards;
+    animation: ani1 0.3s ease-out 0.8s forwards;
 }
 .header-text h1{
     margin-top: 2%;
