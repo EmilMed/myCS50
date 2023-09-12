@@ -121,7 +121,7 @@ nav ul li a:hover::after{
 
 .tab-titles{
     display: flex;
-    margin: 20px 0 80px;
+    margin: 20px 0 40px;
 }
 .tab-links{
     margin-right: 50px;
@@ -137,15 +137,15 @@ nav ul li a:hover::after{
     background: #fff;
     position: absolute;
     left: 0;
-    bottom: -8px;
+    bottom: -10px;
     transition: 0.5s;
 }
 .tab-links.active-link::after{
-    width: 70%;
+    width: 50%;
 }
 .tab-contents ul li{
     list-style: none;
-    margin: 10px 0;
+    margin: 20px 30px;
 }
 .tab-contents ul li span{
     color: #fff;
