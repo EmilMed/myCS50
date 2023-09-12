@@ -70,8 +70,8 @@
         </div>
         <script>
 
-            var tablinks = document.getElementsByClassName("tab-links")
-            var tabcontents = document.getElementsByClassName("tab-contents")
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
 
             function opentab(tabname){
                 for(tablink of tablinks){
@@ -83,7 +83,6 @@
                 event.currentTarget.classlist.add("active-link");
                 document.getElementsById(tabname).classlist.add("active-tab");
             }
-            
         </script>
     </body>
 </html>
