@@ -104,7 +104,7 @@ nav ul li a:hover::after{
 }
 
 .about-col-2 {
-    flex-basis: 35%;
+    flex-basis: 45%;
 }
 .sub-title{
     font-family: sans-serif;
@@ -115,6 +115,14 @@ nav ul li a:hover::after{
 }
 .about-col-2 p{
     font-size: 20px;
-    color: #fff;
+    color: #abc;
     font-family: sans-serif;
+}
+
+.tab-titles{
+    display: flex;
+    marign: 20px 0 40px;
+}
+.tab-links{
+    
 }
