@@ -171,7 +171,7 @@ nav ul li a:hover::after{
     display: block;
 }
 
-#bmi{
+#bmi1{
     font-family: "Jost", sans-serif;
 }
 .containerbmi {
@@ -202,7 +202,7 @@ nav ul li a:hover::after{
   }
   .calculator {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .calculator div {
@@ -236,6 +236,7 @@ nav ul li a:hover::after{
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom:20px;
   }
 
   .calculator button[type="reset"] {
@@ -248,10 +249,11 @@ nav ul li a:hover::after{
 
   .output {
     text-align: center;
+    margin-bottom:20px;
   }
 
   .output #bmi {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 
   .output #desc strong {
