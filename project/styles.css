@@ -162,12 +162,11 @@ h1 {
     text-align: center;
   }
 .containerq {
-    width: 90%;
-    max-width: 420px;
-    padding: 1rem;
+    width: 100%;
+    max-width: 800px;
+    padding: 100px 800px;
     border-radius: 10px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
     display: grid;
     gap: 1rem;
-    place-items: center;
 }
