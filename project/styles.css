@@ -171,6 +171,8 @@ nav ul li a:hover::after{
     font-size: 45px;
 }
 .box {
-    margin-right: 400px;
+    margin-right: 200px;
     margin-top: 200px;
+    width:500px;
+    
 }
