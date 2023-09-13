@@ -179,7 +179,12 @@ nav ul li a:hover::after{
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  
+  .col-1bmi{
+    flex-basis: 45%;
+  }
+  .col-2dmi{
+    flex-basis: 45%;
+  }
   .calculator {
     display: grid;
     gap: 1rem;
