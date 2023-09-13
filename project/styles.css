@@ -169,10 +169,11 @@ nav ul li a:hover::after{
     font-family: sans-serif;
     margin-top: 200px;
     font-size: 45px;
+    font-weight: bold;
 }
 .box {
     margin-right: 200px;
     margin-top: 200px;
     width:500px;
-    
+
 }
