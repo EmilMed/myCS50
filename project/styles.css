@@ -163,7 +163,6 @@ nav ul li a:hover::after{
     display: block;
 }
 
-
 #bmi{
     display: grid;
     font-family: "Jost", sans-serif;
@@ -180,7 +179,7 @@ nav ul li a:hover::after{
   .containerh {
     padding: 20%;
   }
-  
+
   .calculator {
     display: grid;
     gap: 1rem;
