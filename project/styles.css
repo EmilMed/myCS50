@@ -158,6 +158,12 @@ nav ul li a:hover::after{
 .tab-contents.active-tab{
     display: block;
 }
+#bmi{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
 h1 {
     text-align: center;
   }
