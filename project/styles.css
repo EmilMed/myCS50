@@ -78,12 +78,15 @@ nav ul li a:hover::after{
     font-size: 60px;
     animation: ani1 0.8s ease-out 0.8s forwards;
 }
-
 @keyframes ani1{
     100%{
         opacity: 1;
     }
 }
+
+
+
+
 
 #about{
     color: #ababab;
@@ -159,9 +162,17 @@ nav ul li a:hover::after{
 .tab-contents.active-tab{
     display: block;
 }
+
+
+
+
+
 #bmi{
     display: grid;
     font-family: "Jost", sans-serif;
+}
+.headersbmi{
+    padding: 30% 20%;
 }
 
 .containerq {
