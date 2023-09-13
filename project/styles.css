@@ -175,12 +175,8 @@ nav ul li a:hover::after{
     margin-top: 100px;
   }
   .calculator {
-    padding: 0 90 1100px;
     display: grid;
     gap: 1rem;
-  }
-  .containerq h1{
-    display:flex;
   }
 
   .calculator div {
