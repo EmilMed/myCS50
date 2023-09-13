@@ -233,7 +233,7 @@ nav ul li a:hover::after{
   }
 
   .bmi-scale {
-    display: block;
+    display: flex;
   }
 
   .bmi-scale div {
