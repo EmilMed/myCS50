@@ -147,16 +147,16 @@
             form.addEventListener("reset", onFormReset);
 
             function onFormReset() {
-            bmiText.textContent = 0;
-            bmiText.className = "";
-            descText.textContent = "N/A";
+                bmiText.textContent = 0;
+                bmiText.className = "";
+                descText.textContent = "N/A";
             }
 
             function onFormSubmit(e) {
-            e.preventDefault();
+                e.preventDefault();
 
-            const weight = parseFloat(form.weight.value);
-            const height = parseFloat(form.height.value);
+                const weight = parseFloat(form.weight.value);
+                const height = parseFloat(form.height.value);
 
             if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
                 alert("Please enter a valid weight and height");
@@ -173,15 +173,15 @@
             }
 
             function interpretBMI(bmi) {
-            if (bmi < 18.5) {
-                return "underweight";
-            } else if (bmi < 25) {
-                return "healthy";
-            } else if (bmi < 30) {
-                return "overweight";
-            } else {
-                return "obese";
-            }
+                if (bmi < 18.5) {
+                    return "underweight";
+                } else if (bmi < 25) {
+                    return "healthy";
+                } else if (bmi < 30) {
+                    return "overweight";
+                } else {
+                    return "obese";
+                }
             }
         </script>
     </body>
