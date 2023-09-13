@@ -172,7 +172,11 @@ nav ul li a:hover::after{
     font-weight: bold;
 }
 .box {
+    background-color:white;
     margin-right: 200px;
     margin-top: 200px;
     width:500px;
+}
+.content{
+    padding: 0 30px;
 }
