@@ -166,13 +166,18 @@ nav ul li a:hover::after{
 #bmi{
     font-family: "Jost", sans-serif;
 }
-.containerq {
+.containerbmi {
     width: 25%;
     border-radius: 10px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
     display: grid;
     gap: 1rem;
     margin-top: 100px;
+  }
+  .rowbmi{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   .calculator {
     display: grid;
