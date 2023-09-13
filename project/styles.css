@@ -167,7 +167,7 @@ nav ul li a:hover::after{
     font-family: "Jost", sans-serif;
 }
 .containerbmi {
-    width: 25%;
+    width: 100%;
     border-radius: 10px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
     display: grid;
@@ -180,10 +180,17 @@ nav ul li a:hover::after{
     flex-wrap: wrap;
   }
   .col-1bmi{
-    flex-basis: 45%;
+    padding: 100px 200px;
+    font-size: 25px;
+    font-family: sans-serif;
   }
-  .col-2dmi{
-    flex-basis: 45%;
+  .col-1bmi h1{
+    margin-bottom: 40px;
+  }
+  .col-2bmi{
+    flex-basis: 22%;
+    margin-right: 300px;
+    height: 70vh;
   }
   .calculator {
     display: grid;
