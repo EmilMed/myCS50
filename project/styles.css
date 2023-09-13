@@ -165,7 +165,12 @@ nav ul li a:hover::after{
     flex-wrap: wrap;
 }
 .containerq h1{
-    margin-left: 400px;
-    font-family:
+    margin-left: 300px;
+    font-family: sans-serif;
+    margin-top: 200px;
+    font-size: 45px;
 }
-.containerq {
+.box {
+    margin-right: 400px;
+    margin-top: 200px;
+}
