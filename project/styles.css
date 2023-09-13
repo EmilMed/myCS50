@@ -161,16 +161,12 @@ nav ul li a:hover::after{
 }
 #bmi{
     display: grid;
-    place-items: center;
     font-family: "Jost", sans-serif;
 }
 
-h1 {
-    text-align: center;
-  }
 .containerq {
     width: 25%;
-    padding: 1rem;
+    padding: 0px 900px;
     border-radius: 10px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
     display: grid;
