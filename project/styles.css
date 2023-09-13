@@ -179,6 +179,7 @@ nav ul li a:hover::after{
     justify-content: space-between;
     flex-wrap: wrap;
   }
+  
   .calculator {
     display: grid;
     gap: 1rem;
