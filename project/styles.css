@@ -202,7 +202,7 @@ nav ul li a:hover::after{
   .col-2bmi{
     flex-basis: 22%;
     margin-right: 300px;
-    height: 70vh;
+    height: 55vh;
   }
   .calculator {
     display: grid;
@@ -296,3 +296,6 @@ nav ul li a:hover::after{
   .obese {
     color: var(--obese);
   }
+#begin {
+  padding: 0 550px;
+}
