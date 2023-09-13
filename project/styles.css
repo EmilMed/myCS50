@@ -298,5 +298,13 @@ button.calculate {
     opacity: 0;
     cursor: pointer;
   }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
 
-  
