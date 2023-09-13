@@ -265,7 +265,7 @@ button.calculate {
   button.calculate:hover {
     background: #0044ff;
   }
-  .gender {
+.gender {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -297,4 +297,6 @@ button.calculate {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-  }e
+  }
+
+  
