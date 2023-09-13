@@ -172,11 +172,33 @@ nav ul li a:hover::after{
     font-weight: bold;
 }
 .box {
-    background-color:white;
     margin-right: 200px;
     margin-top: 200px;
     width:500px;
 }
 .content{
     padding: 0 30px;
+}
+.input {
+    background: #fff;
+    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+.input label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+}
+.input input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #4f7df9;
+    width: 50%;
+    text-align: center;
+    font-size: 28px;
+    font-family: "Nunito", sans-serif;
 }
