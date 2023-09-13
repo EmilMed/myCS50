@@ -188,12 +188,16 @@ nav ul li a:hover::after{
     flex-wrap: wrap;
   }
   .col-1bmi{
-    padding: 100px 200px;
-    font-size: 25px;
+    padding: 110px 250px;
+    font-size: 22px;
     font-family: sans-serif;
+    width: 60%;
   }
   .col-1bmi h1{
     margin-bottom: 40px;
+  }
+  .col-1bmi p{
+    font-size: 18px;
   }
   .col-2bmi{
     flex-basis: 22%;
