@@ -296,9 +296,15 @@ nav ul li a:hover::after{
   .obese {
     color: var(--obese);
   }
-#begin h1{
-  padding: 0 500px;
-  margin-bottom: 80px;
+.sub-title{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sub-title2{
+  text-align:center;
+  margin-bottom: 20px;
+  font-size: 17px;
+  font-family: sans-serif;
 }
 .type-list{
   display: grid;
