@@ -326,7 +326,7 @@ nav ul li a:hover::after{
   left:0;
   bottom:0;
   overflow:hidden;
-  display:flex;
+  display: flex;
   align-items:center;
   justify-content: center;
   flex-direction:column;
