@@ -297,12 +297,11 @@ nav ul li a:hover::after{
     color: var(--obese);
   }
 #begin {
-  padding: 0 550px;
 }
 .type-list{
   width:100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-gap: 40px;
   margin-top: 50px;
 }
@@ -314,5 +313,5 @@ nav ul li a:hover::after{
 .type img{
   width: 100%;
   border-radius: 10px;
-  display: inline-block;
+  display: block;
 }
