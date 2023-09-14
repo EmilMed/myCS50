@@ -316,6 +316,7 @@ nav ul li a:hover::after{
   height: 350px;
   border-radius:10px;
   display:block;
+  transition: transform 0.5s;
 }
 .layer{
   font-family: "Jost", sans-serif;
@@ -333,6 +334,7 @@ nav ul li a:hover::after{
   flex-direction:column;
   padding: 0 40px;
   font-size: 18px;
+  transition: height 0.5s;
 }
 .layer h3{
   font-family:"Jost", sans-serif;
@@ -345,4 +347,7 @@ nav ul li a:hover::after{
 }
 .type:hover img{
   transform: scale(1.1);
+}
+.type:hover .layer{
+  height: 100%;
 }
