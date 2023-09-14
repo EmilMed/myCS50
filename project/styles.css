@@ -306,4 +306,13 @@ nav ul li a:hover::after{
   grid-gap:40px;
   margin-top:50px;
 }
-.type
+.type{
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.type img{
+  width: 20%;
+  border-radius:10px;
+  display:block;
+}
