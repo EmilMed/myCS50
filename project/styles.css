@@ -301,7 +301,7 @@ nav ul li a:hover::after{
   margin-bottom: 80px;
 }
 .type-list{
-  width:100%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-gap: 40px;
