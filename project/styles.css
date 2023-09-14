@@ -296,7 +296,9 @@ nav ul li a:hover::after{
   .obese {
     color: var(--obese);
   }
-#begin {
+#begin h1{
+  padding: 0 500px;
+  margin-bottom: 80px;
 }
 .type-list{
   width:100%;
@@ -312,6 +314,7 @@ nav ul li a:hover::after{
 }
 .type img{
   width: 100%;
+  height: 350px;
   border-radius: 10px;
   display: block;
 }
