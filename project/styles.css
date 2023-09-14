@@ -312,7 +312,11 @@ nav ul li a:hover::after{
   overflow: hidden;
 }
 .type img{
-  width: 20%;
+  width: 100%;
+  height: 300px;
   border-radius:10px;
   display:block;
+}
+.layer{
+  
 }
