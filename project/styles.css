@@ -331,7 +331,7 @@ nav ul li a:hover::after{
   justify-content: center;
   flex-direction:column;
   padding: 0 40px;
-  font-size: 20px;
+  font-size: 18px;
 }
 .layer h3{
   font-family:sans-serif;
