@@ -343,3 +343,6 @@ nav ul li a:hover::after{
   margin-top: 10px;
   color:white;
 }
+.type:hover img{
+  transform: scale(1.1);
+}
