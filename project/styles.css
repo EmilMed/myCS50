@@ -367,7 +367,7 @@ nav ul li a:hover::after{
   margin-top: 60px;
 }
 .contact-left{
-  margin-top: 30px;
+  margin-top: 10px;
   font-family: "Jost", sans-serif;
   flex-basis: 35%;
 }
