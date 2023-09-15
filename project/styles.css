@@ -363,7 +363,7 @@ nav ul li a:hover::after{
 
 
 #contact {
-  margin-top: 90px;
+  margin-top: 60px;
 }
 .contact-left{
   margin-top: 30px;
@@ -432,4 +432,10 @@ form input, form textarea {
   color: #fff;
   font-size: 18px;
   border-radius: 6px;
+}
+form .btn2{
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
 }
