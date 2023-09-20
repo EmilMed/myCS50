@@ -2,4 +2,6 @@ from flask import Flask
 
 def create_app():
     app = Flask(__name__)
-    app.config()
+    app.config['SECRET_KEY'] = 'lolololol'
+    
+    return app
