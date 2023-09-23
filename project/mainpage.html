@@ -242,7 +242,7 @@
                     return;
                 }
 
-                const heightInMeters = height / 100; 
+                const heightInMeters = height / 100;
                 const bmi = weight / Math.pow(heightInMeters, 2);
                 const desc = interpretBMI(bmi);
 
@@ -263,16 +263,11 @@
                 }
             }
         </script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyhGMPgzNy3mYbEQiAKxpRl_iXq5kLpWrn7w4G7dpKtQaPMwa7Kp6nAFnv1CC0zhZGMEA/exec'
-            const form = document.forms['submit-to-google-sheet']
-
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => console.log('Success!', response))
-                .catch(error => console.error('Error!', error.message))
-            })
+            function sendEmail(){
+                
+            }
         </script>
     </body>
 </html>
