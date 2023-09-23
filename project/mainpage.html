@@ -193,7 +193,7 @@
                         <a href="" class="btn">Help & Support</a>
                     </div>
                     <div class="contact-right">
-                        <form name="submit-to-google-sheet">
+                        <form onsubmit="snedEmail()">
                             <input type="text" name="Name" placeholder="Your Name" required>
                             <input type="email" name="Email" placeholder="Your Email" required>
                             <textarea type="text" name="Message" rows="6" placeholder="Your Message"></textarea>
@@ -266,7 +266,17 @@
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script>
             function sendEmail(){
-                
+                Email.send({
+                    Host : "smtp.elasticemail.com",
+                    Username : "username",
+                    Password : "password",
+                    To : 'them@website.com',
+                    From : "you@isp.com",
+                    Subject : "This is the subject",
+                    Body : "And this is the body"
+                }).then(
+                message => alert(message)
+                );
             }
         </script>
     </body>
