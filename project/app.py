@@ -44,13 +44,6 @@ def buy():
     return apology("TODO")
 
 
-@app.route("/history")
-@login_required
-def history():
-    """Show history of transactions"""
-    return apology("TODO")
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
@@ -86,7 +79,6 @@ def login():
     else:
         return render_template("login.html")
 
-
 @app.route("/logout")
 def logout():
     """Log user out"""
@@ -97,22 +89,7 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 
-
-@app.route("/quote", methods=["GET", "POST"])
-@login_required
-def quote():
-    """Get stock quote."""
-    return apology("TODO")
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    return apology("TODO")
-
-
-@app.route("/sell", methods=["GET", "POST"])
-@login_required
-def sell():
-    """Sell shares of stock"""
     return apology("TODO")
