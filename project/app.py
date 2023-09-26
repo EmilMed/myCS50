@@ -31,9 +31,9 @@ def after_request(response):
     return response
 
 
-@app.route("/")
+@app.route("/mainpage")
 @login_required
-def index():
+def mainpage():
     """Show emails"""
     return apology("TODO")
 
