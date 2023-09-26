@@ -34,14 +34,14 @@ def after_request(response):
 @app.route("/mainpage")
 @login_required
 def mainpage():
-    """Show emails"""
+    """Show main page"""
     return apology("TODO")
 
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    """Buy shares of stock"""
+    """Buy subscription"""
     return apology("TODO")
 
 
