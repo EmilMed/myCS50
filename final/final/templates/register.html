@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Login Page{% endblock %}
+{% block content %}
+    <nav class="subnav">
+        <img src="https://img.freepik.com/premium-vector/fitness-center-logo-sport-fitness-logo-design-gym-logo-icon-design-vector-stock_279597-366.jpg" class="logo">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </nav>
+    <h1 class="registerheading"> Create your own account!</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <div style="text-align: center; color: #ff004f">
+                    <p>{{msg}}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <body>
+        <form class="registerform" action="" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.username }}
+            {{ form.password }}
+            {{ form.submit }}
+            <a style="color:#ccc"class="linkform2" href="login">Already have an account? Log in here!</a>
+        </form>
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-ttle">Contact Us</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>emimejidov@yandex.ru</p>
+                        <p><i class="fa-solid fa-phone"></i>07926516182</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/emil.medzhidov.7"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://twitter.com/im_not_emil"><i class="fa-brands fa-twitter-square"></i></a>
+                            <a href="https://www.instagram.com/limechel_auf"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/emil-medzhidov-26a2a4236"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                        <a href="/help&support" class="btn2">Help & Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}

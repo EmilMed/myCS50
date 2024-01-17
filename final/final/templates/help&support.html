@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Users page{% endblock %}
+{% block content %}
+<nav class="subnav">
+    <img src="https://img.freepik.com/premium-vector/fitness-center-logo-sport-fitness-logo-design-gym-logo-icon-design-vector-stock_279597-366.jpg" class="logo">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+<h1 class="helpheading">Get support by sending us an enquiry!</h1>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Us</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>emimejidov@yandex.ru</p>
+                <p><i class="fa-solid fa-phone"></i>07926516182</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/emil.medzhidov.7"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/im_not_emil"><i class="fa-brands fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/limechel_auf"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/emil-medzhidov-26a2a4236"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="" class="btn">Help & Support</a>
+            </div>
+            <div class="contact-right">
+                <form class="helpform" name="SentMessage" id="contactForm" action="" method="POST">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                <p>{{msg}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                   {{form.hidden_tag()}}
+                   {{form.name.label()}}
+                   {{form.name()}}
+                   {{form.email.label()}}
+                   {{form.email()}}
+                   {{form.message.label()}}
+                   {{form.message()}}
+                   {{form.submit()}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="linkshelp">
+    <h2 class="helpheading">Or if you wish some general help you can follow these links!</h2>
+    <ul>
+        <li>
+            <a style="color: darkred" href="https://www.nhs.uk/live-well/exercise/">NHS GYM USAGE</a>
+        </li>
+        <li>
+            <a style="color: darkred" href="https://www.energise-pentney.co.uk/blog/Gym_Induction">GENERAL GYM INDUCTION</a>
+        </li>
+        <li>
+            <a style="color: darkred" href="https://www.netmeds.com/health-library/post/planning-to-hit-the-gym-take-precautions-with-these-ailments-before-you-start">PRECAUTIONS BEFORE TRAINING</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

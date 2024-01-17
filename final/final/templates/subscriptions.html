@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %}Users page{% endblock %}
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <nav class="subnav">
+        <img src="https://img.freepik.com/premium-vector/fitness-center-logo-sport-fitness-logo-design-gym-logo-icon-design-vector-stock_279597-366.jpg" class="logo">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="pricing-table">
+        <div class="sdetails">
+            <h2>Explore different subscription plans with us!</h2>
+            <p>These subscription plans are all for multiple purposes and workouts, so feel free to consider any of the following contracts as soon as you are comfortable with them! Once you have clicked the "Purchase" button you will have access to the information required for your gym journey!</p>           
+        </div>
+        <div class="sgrid">
+            <div class="box basic">
+                <div class="stitle">3-Month</div>
+                <div class="price">
+                    <b>$44.99</b>
+                    <span>per month</span>
+                </div>
+                <div class="sfeatures">
+                    <div>Advice with specialists at any time</div>
+                    <div>Free first month</div>
+                    <div>No joining fee</div>
+                </div>
+                <div class="sbutton">
+                    <a href="/programmes">
+                        <button href="/programmes">Purchase</button>
+                    </a>
+                </div>
+            </div>
+            <div class="box advanced">
+                <div class="stitle">9-Month</div>
+                <div class="price">
+                    <b>$29.99</b>
+                    <span>per month</span>
+                </div>
+                <div class="sfeatures">
+                    <div>Advice with specialists at any time</div>
+                    <div>Free first month</div>
+                    <div>No joining fee</div>
+                    <div>Wide range of programmes for all purposes</div>
+                    <div>Get a refund if you see no results</div>
+                    <div>Free access to local gyms on weekends</div>
+                    <div>15% discount on gym equipment in our shop</div>
+                </div>
+                <div class="sbutton">
+                    <a href="/programmes">
+                        <button href="/programmes">Purchase</button>
+                    </a>
+                </div>
+            </div>
+            <div class="box master">
+                <div class="stitle">6-Month</div>
+                <div class="price">
+                    <b>$34.99</b>
+                    <span>per month</span>
+                </div>
+                <div class="sfeatures">
+                    <div>Advice with specialists at any time</div>
+                    <div>Free first month</div>
+                    <div>No joining fee</div>
+                    <div>Wide range of programmes for all purposes</div>
+                    <div>Get a refund if you see no results</div>
+                </div>
+                <div class="sbutton">
+                    <a href="/programmes">
+                        <button href="/programmes">Purchase</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Us</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>emimejidov@yandex.ru</p>
+                        <p><i class="fa-solid fa-phone"></i>07926516182</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/emil.medzhidov.7"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://twitter.com/im_not_emil"><i class="fa-brands fa-twitter-square"></i></a>
+                            <a href="https://www.instagram.com/limechel_auf"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/emil-medzhidov-26a2a4236"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                        <a href="/help&support" class="btn">Help & Support</a>
+                    </div>
+                    <div class="contact-right">
+                        <form class="helpform" action="#" method="POST">
+                        {{form.hidden_tag()}}
+                        {{form.name.label()}}
+                        {{form.name()}}
+                        {{form.email.label()}}
+                        {{form.email()}}
+                        {{form.message.label()}}
+                        {{form.message()}}
+                        {{form.submit()}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

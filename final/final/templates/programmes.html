@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+{% block title %}Users page{% endblock %}
+{% block content %}
+<nav class="subnav">
+    <img src="https://img.freepik.com/premium-vector/fitness-center-logo-sport-fitness-logo-design-gym-logo-icon-design-vector-stock_279597-366.jpg" class="logo">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <div style="font-size:18px; text-align: center; color: rgb(57, 137, 57); font-weight:800; font-family: Jost, sans-serif;">
+                <p>{{msg}}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<div class="menu">
+    <div class="headermenu">
+        <h1>Welcome to your tailored gym programme!</h1>
+        <p>here you will get introduced to the proper workout principles as well as keys to achieving your personal goals</p>
+    </div>
+    <div class="generaladvises">
+        <h1>Here are some general advices for keeping yourself healthy before the workout to begin with!</h1>
+        <div class="containeradvises">
+            <div class="windowone">
+                <h2 class="headerwone">Warm up</h2>
+                <p>At the very least you should help your body acclimate to what you're about to put it through. If you're using the cardio machines, start out slow and gradually build up to a run. If you're going to be doing a HIIT (high-intensity interval training) style session, still start out with a light jog to get the blood moving around your body.</p>
+            </div>
+            <div class="windowtwo">
+                <h2 class="headerwtwo">Hydration</h2>
+                <p>You get hot and sweaty at the gym and you need water to replenish what you sweat out. Plus, some gyms are not as air-conditioned as you might like. Whether you like to sip on an intra-workout or just have your jug of water with you, you need to be taking in fluids while you work out.</p>
+            </div>
+            <div class="windowthree">
+                <h2 class="headerwthree">Rest</h2>
+                <p>It's much better to take the time to get it right than to rush in and get injured. Don't try to keep up with your gym partner if they're going heavy and you're struggling. Wait until you're ready. This goes for the long-term too: understand that fitness is a lifelong pursuit — the rewards come gradually, not all at once.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fat-loss">
+    <div class="containerfat">
+        <h1 class="fathead">Fat Loss</h1>
+        <p style="text-align: center; padding: 0px 300px; margin-top: 40px; font-size: 20px;">In a weight loss programme, weight training is important to help maintain muscle. Unfortunately when you try to lose weight and find yourself in a calorie deficit (which is necessary), muscle mass is also lost along with fat mass which is why it is important to do strength training when losing weight. </p>
+        <div class="firstsesh" style="margin-bottom: 60px;">
+            <div class="leftside" style="text-align:center; border-style: solid; border-color: azure; padding: 40px 20px; border-radius: 30px; width:90%;">
+                <h1 style="font-size: 40px; margin-bottom: 20px; text-align: center;">Day one</h1>
+                <p style="font-size: 20px; margin-bottom: 30px; text-align: center;">The first training will be focused on cardio training in order to start off the week with a good calory burn.</p>
+                <ul style="font-size: 20px; display: inline-block; text-align: left;">
+                    <li>1. Box Jumps - 3 sets, 15 repetitions</li>
+                    <li>2. Kettle Swings(10kg) - 3 sets, 20 repetitions</li>
+                    <li>3. Sled push(100kg) - 10 runs</li>
+                    <li>4. Burpees - 3 sets, 20 repetitions</li>
+                    <li>5. Plank - 3 sets, 1 minute each</li>
+                </ul>
+            </div>
+            <div class="rightside" style="padding: 20px 0px;">
+                <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
+                <div class="img-list">
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/635/567/original/woman-doing-high-box-jump-exercise-flat-illustration-isolated-on-white-background-vector.jpg" alt="img-1" class="image-item">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/006/417/765/small_2x/man-doing-one-arm-kettlebell-swings-exercise-flat-illustration-isolated-on-white-background-free-vector.jpg" alt="img-2" class="image-item">
+                    <img src="https://www.shutterstock.com/image-vector/woman-doing-sled-pushed-exercise-600nw-2204704413.jpg" alt="img-3" class="image-item">
+                    <img src="https://www.shutterstock.com/image-vector/man-doing-squat-thrust-burpee-600nw-1841027083.jpg" alt="img-4" class="image-item">
+                    <img src="https://www.shutterstock.com/image-vector/woman-doing-battle-rope-jumping-600nw-2353646821.jpg" alt="img-5" class="image-item">
+                </div>
+                <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
+                <div class="slider-scrollbar">
+                    <div class="scrollbar-track">
+                        <div class="scrollbar-thumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="firstsesh" style="margin-bottom: 60px;">
+            <div class="leftside" style="text-align:center; border-style: solid; border-color: azure; padding: 20px 20px; border-radius: 30px; width:90%;">
+                <h1 style="font-size: 40px; margin-bottom: 20px; text-align: center;">Day two</h1>
+                <p style="font-size: 20px; margin-bottom: 30px; text-align: center;">The second training will be more focused on building strength and muscles with weights since it is a brilliant way to retain the body volume while trying to lose some killograms!</p>
+                <ul style="font-size: 20px; display: inline-block; text-align: left;">
+                    <li>1. Kettlebell squats - 3 sets, 10 repetitions</li>
+                    <li>2. Pull ups(wiith assistance if needed) - 3 sets, 10 repetitions</li>
+                    <li>3. Lunges with weights - 3 sets, 10 repetitions</li>
+                    <li>4. Bench press - 3 sets, 10 repetitions</li>
+                    <li>5. Leg raises - 3 sets, 10 repetitions</li>
+                </ul>
+            </div>
+            <div class="rightside" style="padding: 20px 0px;">
+                <div class="img-list">
+                    <img src="https://static.vecteezy.com/system/resources/previews/029/197/342/original/woman-doing-kettlebell-goblet-squat-exercise-vector.jpg" alt="img-1" class="image-item">
+                    <img src="https://www.shutterstock.com/image-vector/man-doing-chinups-workout-fitness-600nw-1837673329.jpg" alt="img-2" class="image-item">
+                    <img src="https://st5.depositphotos.com/80218270/66815/v/450/depositphotos_668154958-stock-illustration-woman-doing-deadlift-lunge-exercise.jpg" alt="img-3" class="image-item">
+                    <img src="https://www.shutterstock.com/image-vector/man-doing-barbell-bench-press-600nw-1841766727.jpg" alt="img-4" class="image-item">
+                    <img src="https://img.myloview.com.br/adesivos/man-doing-hanging-knee-leg-raises-abdominals-exercise-flat-vector-illustration-isolated-on-white-background-editable-file-with-layers-700-236596928.jpg" alt="img-5" class="image-item">
+                </div>
+            </div>
+        </div>
+        <div class="firstsesh" style="margin-bottom: 60px;">
+            <div class="leftside" style="border-style: solid; border-color: azure; padding: 50px 50px; border-radius: 30px; width: 120%;">
+                <h1 style="font-size: 40px; margin-bottom: 20px; text-align: center;">Day three</h1>
+                <p style="font-size: 25px; margin-bottom: 30px; text-align: center;">The third session will also be focused on cardio!</p>
+                <p style="text-align: center; font-size: 20px;">Aerobic exercise reduces the risk of many conditions. These conditions include obesity, heart disease, high blood pressure, type 2 diabetes, metabolic syndrome, stroke and certain types of cancer. Weight-bearing aerobic exercises, such as walking, help lower the risk of osteoporosis.</p>
+            </div>
+            <div class="rightside">
+                <div class="imgthree">
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/631/425/non_2x/muscular-adult-woman-running-or-jogging-workout-excercise-marathon-athlete-doing-sprint-outdoor-simple-flat-illustration-vector.jpg" alt="img-1" class="image-item">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="muscle-gain">
+    <div class="containerfat">
+        <h1 class="fathead">Muscle gain</h1>
+        <p style="text-align: center; padding: 0px 300px; margin-top: 40px; font-size: 20px;"> Resistance training promotes muscle growth. Examples of resistance training include the use of free weights, weight machines, your own body weight or resistance bands. Suggestions include: Train just two or three times per week to give your muscles time to recover.</p>
+        <div class="firstsesh" style="margin-bottom: 60px;">
+            <div class="leftside" style="text-align:center; border-style: solid; border-color: azure; padding: 40px 20px; border-radius: 30px; width:90%;">
+                <h1 style="font-size: 40px; margin-bottom: 20px; text-align: center;">Day one - Push</h1>
+                <p style="font-size: 20px; margin-bottom: 30px; text-align: center;">The first training will train chest muscles, shoulders and triceps. Targeting both main body and arms creates a strong hyperthrophy which is felt straight after the first exercise and motivates you to workout more!</p>
+                <ul style="font-size: 20px; display: inline-block; text-align: left;">
+                    <li>1. Bench press - 3 sets, 10 repetitions</li>
+                    <li>2. Lateral raises - 3 sets, 10 repetitions</li>
+                    <li>3. Dips - 3 sets, 15 repetitions</li>
+                    <li>4. Shoulder press - 3 sets, 10 repetitions</li>
+                    <li>5. Inclined dumbell press - 3 sets, 10 repetitions</li>
+                </ul>
+            </div>
+            <div class="rightside" style="padding: 20px 0px;">
+                <div class="img-list">
+                    <img src="https://www.shutterstock.com/image-vector/man-doing-barbell-bench-press-600nw-1841766727.jpg" alt="img-4" class="image-item">
+                    <img src="https://www.shutterstock.com/image-vector/man-doing-lateral-side-shoulder-600nw-1991660336.jpg" alt="img-2" class="image-item">
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/321/566/non_2x/man-doing-chair-bench-tricep-dips-exercise-flat-illustration-isolated-on-white-background-free-vector.jpg" alt="img-3" class="image-item">
+                    <img src="https://static.vecteezy.com/system/resources/previews/016/124/185/original/woman-doing-a-shoulder-press-exercise-on-a-weight-machine-exercise-flat-illustration-isolated-on-white-background-vector.jpg" alt="img-4" class="image-item">
+                    <img src="https://static.vecteezy.com/system/resources/previews/027/211/905/non_2x/man-doing-incline-dumbbell-bench-press-exercise-flat-illustration-isolated-on-white-background-workout-character-vector.jpg" alt="img-5" class="image-item">
+                </div>
+            </div>
+        </div>
+        <div class="firstsesh" style="margin-bottom: 60px;">
+            <div class="leftside" style="text-align:center; border-style: solid; border-color: azure; padding: 20px 20px; border-radius: 30px; width:90%;">
+                <h1 style="font-size: 40px; margin-bottom: 20px; text-align: center;">Day two - Pull</h1>
+                <p style="font-size: 20px; margin-bottom: 30px; text-align: center;">The second gym session will be dedicated to back muslces, including upper back, rear deltoids, upper and lower lats and traps. Back muscles strengthen your pull and widen your back protecting the spine and neck from injuries.</p>
+                <ul style="font-size: 20px; display: inline-block; text-align: left;">
+                    <li>1. Pull ups - 3 sets, 10 repetitions</li>
+                    <li>2. Bicep curls - 3 sets, 10 repetitions</li>
+                    <li>3. Seated cable row - 3 sets, 10 repetitions</li>
+                    <li>4. Lat pulldowns - 3 sets, 10 repetitions</li>
+                    <li>5. Shrugs - 3 sets, 15 repetitions</li>
+                </ul>
+            </div>
+            <div class="rightside" style="padding: 20px 0px;">
+                <div class="img-list">
+                    <img src="https://www.shutterstock.com/image-vector/man-doing-chinups-workout-fitness-600nw-1837673329.jpg" alt="img-1" class="image-item">
+                    <img src="https://www.shutterstock.com/image-vector/man-doing-standing-dumbbell-bicep-600nw-1850250391.jpg" alt="img-2" class="image-item">
+                    <img src="https://static.vecteezy.com/system/resources/previews/008/056/915/original/man-doing-seated-low-cable-back-rows-exercise-flat-illustration-isolated-on-white-background-free-vector.jpg" alt="img-3" class="image-item">
+                    <img src="https://thumbs.dreamstime.com/b/basic-rgb-248990552.jpg" alt="img-4" class="image-item">
+                    <img src="https://thumbs.dreamstime.com/b/art-illustration-198615654.jpg" alt="img-5" class="image-item">
+                </div>
+            </div>
+        </div>
+        <div class="firstsesh" style="margin-bottom: 60px;">
+            <div class="leftside" style="text-align:center; border-style: solid; border-color: azure; padding: 20px 20px; border-radius: 30px; width:90%;">
+                <h1 style="font-size: 40px; margin-bottom: 20px; text-align: center;">Day three - Legs</h1>
+                <p style="font-size: 20px; margin-bottom: 30px; text-align: center;">In the third session you will be training leg muscles: Hamstrings, Quads and Calves. Growing leg muscles enhances mobility and improves the core strength simultaneously, which helps your back a lot!</p>
+                <ul style="font-size: 20px; display: inline-block; text-align: left;">
+                    <li>1. Bar squats - 3 sets, 10 repetitions</li>
+                    <li>2. Deadlift - 3 sets, 5 repetitions</li>
+                    <li>3. Lunges - 3 sets, 10 repetitions</li>
+                    <li>4. Calve raises - 3 sets, 15 repetitions</li>
+                    <li>5. Bulgarian split squats - 3 sets, 10 repetitions</li>
+                </ul>
+            </div>
+            <div class="rightside" style="padding: 20px 0px;">
+                <div class="img-list">
+                    <img src="https://www.shutterstock.com/image-vector/man-doing-barbell-squat-exercise-600nw-1994988698.jpg" alt="img-1" class="image-item">
+                    <img src="https://www.shutterstock.com/image-vector/man-doing-sumo-barbell-deadlifts-600nw-2034318965.jpg" alt="img-2" class="image-item">
+                    <img src="https://www.shutterstock.com/image-vector/man-doing-dumbbell-walking-lunges-600nw-2048783186.jpg" alt="img-3" class="image-item">
+                    <img src="https://media.istockphoto.com/id/1407656251/vector/man-doing-stand-on-a-step-so-heel-can-drop-lower-than-the-rest-of-foot-at-the-bottom-of-the.jpg?s=612x612&w=0&k=20&c=sJrukhGBZdaDIbWcE2b8GgDBANxEu5EeHAymhZ6Mfcg=" alt="img-4" class="image-item">
+                    <img src="https://static.vecteezy.com/ti/vecteur-libre/p3/6417725-homme-faisant-bulgare-split-squats-exercice-television-vector-illustration-isole-sur-fond-blanc-vectoriel.jpg" alt="img-5" class="image-item">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p style="font-size: 25px; margin-bottom: 30px; text-align: center; font-family: Jost, sans-serif; padding: 0px 400px; margin-top: 90px; color: rgb(175, 175, 175);">If you still have any questions or would like to find out more about available programme updates, send us a query via this form!</p>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Us</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>emimejidov@yandex.ru</p>
+                <p><i class="fa-solid fa-phone"></i>07926516182</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/emil.medzhidov.7"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/im_not_emil"><i class="fa-brands fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/limechel_auf"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/emil-medzhidov-26a2a4236"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="/help&support" class="btn">Help & Support</a>
+            </div>
+            <div class="contact-right">
+                <form class="helpform" name="SentMessage" id="contactForm" action="" method="POST">
+                   {{form.hidden_tag()}}
+                   {{form.name.label()}}
+                   {{form.name()}}
+                   {{form.email.label()}}
+                   {{form.email()}}
+                   {{form.message.label()}}
+                   {{form.message()}}
+                   {{form.submit()}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const initSlider = () => {
+        const imageList = document.querySelector(".img-list");
+        const slideButtons = document.querySelectorAll(".slide-button");
+        const sliderScrollbar = document.querySelector(".slider-scrollbar");
+        const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
+        const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+
+        scrollbarThumb.addEventListener("mousedown", (e) => {
+            const startX = e.clientX;
+            const thumbPosition = scrollbarThumb.offsetLeft;
+
+            const handleMouseMove = (e) => {
+                const deltaX = e.clientX - startX;
+                const newThumbPosition = thumbPosition + deltaX;
+                const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
+
+                const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
+                const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
+
+                scrollbarThumb.style.left = `${boundedPosition}px`;
+                imageList.scrollLeft = scrollPosition;
+            };
+
+            const handleMouseUp = () => {
+                document.removeEventListener("mousemove", handleMouseMove);
+                document.removeEventListener("mouseup", handleMouseUp);
+            };
+
+            document.addEventListener("mousemove", handleMouseMove);
+            document.addEventListener("mouseup", handleMouseUp);
+        });
+
+        slideButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const direction = button.id === "prev-slide" ? -1 : 1;
+                const scrollAmount = imageList.clientWidth * direction;
+                imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            });
+        });
+
+        const handleSlideButtons = () => {
+            slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "block";
+            slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "block";
+        };
+
+        const updateScrollThumbPosition = () => {
+            const scrollPosition = imageList.scrollLeft;
+            const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
+            scrollbarThumb.style.left = `${thumbPosition}px`;
+        };
+
+        imageList.addEventListener("scroll", () => {
+            handleSlideButtons();
+            updateScrollThumbPosition();
+        });
+    };
+
+    window.addEventListener("load", initSlider);
+</script>
+{% endblock %}

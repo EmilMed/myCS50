@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}Users page{% endblock %}
+{% block content %}
+<nav class="subnav">
+    <img src="https://img.freepik.com/premium-vector/fitness-center-logo-sport-fitness-logo-design-gym-logo-icon-design-vector-stock_279597-366.jpg" class="logo">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <div style="text-align: center; color: #ff004f">
+                    <p>{{msg}}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+<body>
+    <div class="upper_text">
+        <p class="upper_text_header">Welcome to your personal account page, {{ current_user.username }} </p>
+        <ul>
+            <li>Choose subscription of your choice!</li>
+                <a class="links_user" style="color: #ff004f" href="/subscriptions">Explore</a>
+                <p style="color:black">Hello</p>
+            <li>Go back to the homepage</li>
+                <a class="links_user" style="color: #ff004f" href="/">Go back</a>
+                <p style="color:black">Hello</p>
+            <li>Login with a different account</li>
+                <a class="links_user" style="color: #ff004f" href="/logout">Logout</a>
+        </ul>
+    </div>
+    <div id="begin">
+        <div class="container">
+            <h1 class="sub-title">Begin your journey with us, {{ current_user.username }}!</h1>
+            <h2 style="font-family: Jost, sans-serif;" class="sub-title2">Choose your plan and start working with us!</h2>
+            <div class="type-list">
+                <div class="type">
+                    <img src="https://prod-ne-cdn-media.puregym.com/media/819394/gym-workout-plan-for-gaining-muscle_header.jpg?quality=80&width=992">
+                    <div class="layer">
+                        <h3>3-month membership</h3>
+                            <ul>
+                                <li>Advice with specialists at any time</li>
+                                <li>Free first month</li>
+                                <li>No joining fee</li>
+                            </ul>
+                        <a href="/subscriptions">Learn More</a>
+                    </div>
+                </div>
+                <div class="type">
+                    <img src="https://www.basetraining.org/wp-content/uploads/2023/02/Sportive-serious-people-liftin.jpg">
+                    <div class="layer">
+                        <h3>6-month membership</h3>
+                            <ul>
+                                <li>Advice with specialists at any time</li>
+                                <li>Free first month</li>
+                                <li>No joining fee</li>
+                                <li>Wide range of programmes for all purposes</li>
+                                <li>Get a refund if you see no results</li>
+                            </ul>
+                        <a href="/subscriptions">Learn More</a>
+                    </div>
+                </div>
+                <div class="type">
+                    <img src="https://media.self.com/photos/64063998753c98598ce42cde/16:9/w_8719,h_4904,c_limit/benfits%20of%20running.jpeg">
+                    <div class="layer">
+                        <h3>9-month membership</h3>
+                            <ul>
+                                <li>Advice with specialists at any time</li>
+                                <li>Free first month</li>
+                                <li>No joining fee</li>
+                                <li>Wide range of programmes for all purposes</li>
+                                <li>Get a refund if you see no results</li>
+                                <li>Free access to local gyms on weekends</li>
+                                <li>15% discount on gym equipment</li>
+                            </ul>
+                        <a href="/subscriptions">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Us</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>emimejidov@yandex.ru</p>
+                    <p><i class="fa-solid fa-phone"></i>07926516182</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/emil.medzhidov.7"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://twitter.com/im_not_emil"><i class="fa-brands fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/limechel_auf"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/emil-medzhidov-26a2a4236"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="/help&support" class="btn">Help & Support</a>
+                </div>
+                <div class="contact-right">
+                    <form class="helpform" action="#" method="POST">
+                    {{form.hidden_tag()}}
+                    {{form.name.label()}}
+                    {{form.name()}}
+                    {{form.email.label()}}
+                    {{form.email()}}
+                    {{form.message.label()}}
+                    {{form.message()}}
+                    {{form.submit()}}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
